@@ -8,21 +8,21 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <section class="container-fluid">
+    <div class="container-fluid">
     <nav class="nav">
         <div class="logo"><h1>Mr.Coffee</h1></div>
         <div class="search-box">
             <form>
                 <label>
-                    <input type ="text" name ="search" id ="srch" placeholder="Search">
+                    <input type ="text" name ="search" id ="srch" placeholder="جست و جو">
                 </label>
                 <button type ="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>
         <ul>
-            <li><a href="/ContactUs">درباره ما</a></li>
-            <li><a href="/Products">محصولات</a></li>
             <li><a href="/Home">خانه</a></li>
+            <li><a href="/Products">محصولات</a></li>
+            <li><a href="/ContactUs">درباره ما</a></li>
             <li>
                 {% if user.is_authenticated %}
                 <a href="/Logout"><ion-icon name="log-out"></ion-icon></a>
@@ -43,14 +43,15 @@
         <div class="heading">
             <h2>مستر کافه</h2>
         </div>
-        <button class="btn" href="#">نمایش بیشتر</button>>
+        <button class="btn" href="#">محصولات بیشتر</button>>
     </header>
+    <hr>
     <main class="main">
             <!-- Start items -->
 <section class="row">
     <article class="col">
         <div class="circle">
-            <img src="../../../static/image/FIFA-23-Crack-Status.png">
+            <img src="../static/image/SPRK_default_preset_name_custom_1.png">
         </div>
         <div class="content-item">
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
@@ -59,7 +60,7 @@
     </article>
     <article class="col">
         <div class="circle">
-            <img src="../../../static/image/FIFA-23-Crack-Status.png">
+            <img src="../static/image/SPRK_default_preset_name_custom_1.png">
         </div>
         <div class="content-item">
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
@@ -68,7 +69,7 @@
     </article>
     <article class="col">
         <div class="circle">
-            <img src="../../../static/image/FIFA-23-Crack-Status.png">
+            <img src="../static/image/SPRK_default_preset_name_custom_1.png">
         </div>
         <div class="content-item">
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
@@ -77,17 +78,42 @@
     </article>
     <article class="col">
         <div class="circle">
-            <img src="../../../static/image/FIFA-23-Crack-Status.png">
+            <img src="../static/image/SPRK_default_preset_name_custom_1.png">
         </div>
         <div class="content-item">
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
             <a href="">READ MORE</a>
         </div>
     </article>
-</section>
+    </section>
     <!-- end items -->
     </main>
-    </div>
+    <footer class="footer">
+        <div class="section-center">
+            <div class="social-icons">
+            <!-- social icon -->
+            <a href="#" class="social-icon">
+            <ion-icon name="navigate"></ion-icon>
+            </a>
+            <!-- end of social icon -->
+            <!-- social icon -->
+            <a href="#" class="social-icon">
+            <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+            <!-- end of social icon -->
+            <!-- social icon -->
+            <a href="#" class="social-icon">
+                <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+            <!-- end of social icon -->
+        </div>
+        <p class="footer-text">
+            .&copy;2023 <span class="text-primary">MR.Coffee</span>
+            all right reserved by Topop
+        </p>
+        </div>
+    </footer>
+</div>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
