@@ -1,28 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap');
+@font-face {
+    font-family: font1;
+    src: url(../fonts/vazirmatn-Regular.ttf);
+}
+@font-face {
+    font-family: font2;
+    src: url(../fonts/vazirmatn-Black.ttf);
+}
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:  "vazir", Montserrat;
     transition: all .2s;
 }
-:root {
-  --primaryColor: #a82424;
-  --secondaryColor: #fca311;
-  --mainDark: #212121;
-  --mainWhite: #fff;
-  --mainGrey: #e5e5e5;
-  --slantedText: "Grand Hotel", cursive;
-  --mainTransition: all 0.3s linear;
-  --letterSpacing: 0.5rem;
+*{
+    margin: 0;
+    padding: 0;
 }
 body{
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-position: center;
+    font-family: font1;
 }
-header{
+.container-fluid{
+    width: 100%;
+    height: auto;
+}
+.nav{
     position: fixed;
     top: 0;
     left: 0;
@@ -38,23 +39,23 @@ header{
 #chk1{
     display: none;
 }
-ion-icon{
+ion-icon {
     cursor: pointer;
-    font-size: 20px;
-}
-i {
-    cursor: pointer;
-    font-size: 20px;
+    font-size: 20pt;
     color: white;
 }
-header .logo{
+ion-icon:hover {
+    color: #ff7800;
+}
+.nav .logo{
     flex: 1;
     color:#fff;
+    font-family: font2;
     margin-left: 30px;
     text-transform: uppercase;
-    font-size: 25px;
+    font-size: 28pt;
 }
-header .search-box{
+.nav .search-box{
     flex: 1;
     position: relative;
 }
@@ -84,26 +85,26 @@ header .search-box{
     background: rgb(125, 0, 0);
     color: #fff;
 }
-header ul {
+.nav ul {
     flex:2;
     display: flex;
     justify-content: space-evenly;
 }
-header ul li{
+.nav ul li{
     list-style: none;
 }
-header ul li a{
+.nav ul li a{
     text-decoration: none;
     color:#fff;
-    font-weight: 600;
+    font-size: 16pt;
     text-transform: uppercase;
     padding: 10px 15px;
     transition: all .4s;
 }
-header ul li a:hover{
+.nav ul li a:hover{
     color: #ff7800;
 }
-header .menu{
+.nav .menu{
     font-size: 2.5em;
     display: none;
 }
@@ -114,7 +115,7 @@ header .menu{
     .search-box button{
         position: absolute;
     }
-    header ul{
+    .nav ul{
         position: fixed;
         top:100px;
         right: -100%;
@@ -125,20 +126,53 @@ header .menu{
         align-items: center;
         transition: right 0.5s linear;
     }
-    header .menu{
+    .nav .menu{
         display: block;
         width:100px;
         text-align: center;
     }
     #chk1:checked ~ ul{
         right: 0;
-
     }
 }
-.background{
-    background-size: cover;
+.header{
+    width: 100%;
+    height: 1000px;
+    background: url("../image/coffee-cup-beans.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-attachment:fixed;
+    position: relative;
 }
-.back {
-    max-width: 150rem;
-    margin: 0 auto;
+h2{
+    position: absolute;
+    top: 200px;
+    left: 400px;
+    font-size: 200pt;
+}
+.btn{
+    position: absolute;
+    top: 600px;
+    left: 750px;
+    width: 350px;
+    height: 100px;
+    font-family: font1;
+    font-size: 20pt;
+    background-color: saddlebrown;
+    border-radius: 20px;
+    border: none;
+    transition: 0.3s;
+}
+.btn:hover{
+    background-color: #4b220a;
+    color: white;
+    animation: slide 2s ease infinite;
+}
+@keyframes slide{
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.2);
+    }
 }
