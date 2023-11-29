@@ -122,4 +122,3 @@ def reset_password_done(request):
 
 def forgot_password_done(request):
     render(request, 'En/ForgetPassword_Done.html')
-
