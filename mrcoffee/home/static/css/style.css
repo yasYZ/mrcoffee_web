@@ -264,17 +264,17 @@ img {
 
 .row .col:nth-child(1) .circle,
 .row .col:nth-child(1) .content-item a {
-    background-color: #882b2b;
+    background-color: #ffffff;
 }
 
 .row .col:nth-child(2) .circle,
 .row .col:nth-child(2) .content-item a {
-    background-color: #da2268;
+    background-color: #ffffff;
 }
 
 .row .col:nth-child(3) .circle,
 .row .col:nth-child(3) .content-item a {
-    background-color: #bb02ff;
+    background-color: #ffffff;
 }
 
 .row .col:nth-child(4) .circle,
