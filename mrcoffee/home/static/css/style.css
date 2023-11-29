@@ -264,7 +264,7 @@ img {
 
 .row .col:nth-child(1) .circle,
 .row .col:nth-child(1) .content-item a {
-    background-color: #ffffff;
+    background-color: #882b2b;
 }
 
 .row .col:nth-child(2) .circle,
@@ -274,7 +274,7 @@ img {
 
 .row .col:nth-child(3) .circle,
 .row .col:nth-child(3) .content-item a {
-    background-color: #ffffff;
+    background-color: #bb02ff;
 }
 
 .row .col:nth-child(4) .circle,
