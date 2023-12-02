@@ -5,11 +5,7 @@ from django.contrib import messages
 from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import send_mail
 from django.core.exceptions import ObjectDoesNotExist
-<<<<<<< HEAD
-from topop.settings import EMAIL_HOST_USER
-=======
 from mrcoffee.settings import EMAIL_HOST_USER
->>>>>>> ede60ec (Initial commit)
 
 # Create your views here.
 
@@ -23,17 +19,10 @@ def login_register(request):
         if user is not None:
             login(request, user)
             messages.success(request, "Logged in")
-<<<<<<< HEAD
             return redirect("Home")
         else:
             messages.success(request, "There was a problem in logging in")
-            return redirect("LoginSignup")
-=======
-            return redirect("/Home")
-        else:
-            messages.success(request, "There was a problem in logging in")
             return redirect("/LoginSignup")
->>>>>>> ede60ec (Initial commit)
     else:
         return render(request, 'En/LoginSignup.html')
 
