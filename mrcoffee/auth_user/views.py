@@ -19,7 +19,7 @@ def login_register(request):
         if user is not None:
             login(request, user)
             messages.success(request, "Logged in")
-            return redirect("Home")
+            return redirect("/Home")
         else:
             messages.success(request, "There was a problem in logging in")
             return redirect("/LoginSignup")
@@ -49,7 +49,7 @@ def reset_password(request, uidb64, token):
             user.set_password(new_password)
             user.save()
             messages.success(request, "Your password is successfully changed")
-            return redirect('Home')
+            return redirect('/Home')
         else:
             messages.error(request, "Your password doesnt match")
     return render(request, 'En/ResetPassword.html', context)
@@ -105,7 +105,7 @@ def forgot_password(request):
 def log_out(request):
     logout(request)
     messages.success(request, "You successfully Logged out!")
-    return redirect("Home")
+    return redirect("/Home")
 
 
 def register(request):
@@ -118,7 +118,7 @@ def register(request):
             try:
                 User.objects.create_user(username=username, password=password, email=email)
                 messages.success(request, "Registration successful!")
-                return redirect("LoginSignup")  # Redirect to the login page
+                return redirect("/LoginSignup")  # Redirect to the login page
             except Exception as ex:
                 messages.error(request, f"Registration failed. Error: {str(ex)}")
         else:
