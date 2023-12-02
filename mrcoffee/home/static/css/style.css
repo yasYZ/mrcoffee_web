@@ -160,13 +160,15 @@ ion-icon:hover {
     position: relative;
     min-height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("../image/coffee-cup-beans.jpg") center/cover no-repeat fixed;
+    url("../image/IMG_20231202_153022_478.jpg") center/cover no-repeat fixed;
 }
 h2{
     position: absolute;
     top: 200px;
     font-family: font2;
     left: 400px;
+    color: black;
+    opacity: 0.6;
     font-size: 200pt;
 }
 .btn{
