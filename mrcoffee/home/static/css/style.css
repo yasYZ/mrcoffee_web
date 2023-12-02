@@ -1,10 +1,10 @@
 @font-face {
     font-family: font1;
-    src: url(../fonts/vazirmatn-Regular.ttf);
+    src: url(../fonts/Vazirmatn-Regular.ttf);
 }
 @font-face {
     font-family: font2;
-    src: url(../fonts/vazirmatn-Black.ttf);
+    src: url(../fonts/Vazirmatn-Black.ttf);
 }
 *{
     margin: 0;
@@ -14,7 +14,7 @@
 }
 :root {
   --primaryColor: #a82424;
-  --secondaryColor: #fca311;
+  --secondaryColor: #52353d;
   --mainDark: #52353d;
   --mainWhite: #fff;
   --mainGrey: #e5e5e5;
@@ -54,6 +54,10 @@ ion-icon {
 }
 ion-icon:hover {
     color: #ff7800;
+}
+.menu-btn{
+    font-size: 30pt;
+    margin-top: 15px;
 }
 .nav .logo{
     flex: 1;
@@ -119,6 +123,9 @@ ion-icon:hover {
     font-size: 2.5em;
     display: none;
 }
+.menu ion-icon:hover{
+    transform: rotate(45deg);
+}
 @media(max-width:1000px){
     .logo h1 {
         font-size: 40px;
@@ -144,6 +151,7 @@ ion-icon:hover {
     }
     #chk1:checked ~ ul{
         right: 0;
+
     }
 }
 .header{
@@ -172,20 +180,12 @@ h2{
     background-color: saddlebrown;
     border-radius: 20px;
     border: none;
-    transition: 0.3s;
+    transition:all 0.5s;
 }
 .btn:hover{
     background-color: #4b220a;
     color: white;
-    animation: slide 2s ease infinite;
-}
-@keyframes slide{
-    0%{
-        transform: scale(1);
-    }
-    100%{
-        transform: scale(1.2);
-    }
+    transform: scale(1.1);
 }
 /* News item start */
 .row {
@@ -262,33 +262,36 @@ img {
     position: relative;
     display: inline-block;
     background-color: #000;
-    color: #fff;
+    color: #ffffff;
     padding: 10px 20px;
     border-radius: 40px;
     margin-top: 20px;
     text-decoration: none;
+    transition: all 0.5s;
 }
 
 .row .col:nth-child(1) .circle,
 .row .col:nth-child(1) .content-item a {
-    background-color: #882b2b;
+    background-color: #800606;
 }
 
 .row .col:nth-child(2) .circle,
 .row .col:nth-child(2) .content-item a {
-    background-color: #561515;
+    background-color: #a84424;
 }
 
 .row .col:nth-child(3) .circle,
 .row .col:nth-child(3) .content-item a {
-    background-color: #a84424;
+    background-color: #52353d;
 }
 
 .row .col:nth-child(4) .circle,
 .row .col:nth-child(4) .content-item a {
-    background-color: #52353d;
+    background-color: #602929;
 }
-
+.content-item a:hover{
+    transform: scale(1.1);
+}
 @media screen and (min-width: 480px) {
     .row .col {
         width: calc(50% - 10px);
