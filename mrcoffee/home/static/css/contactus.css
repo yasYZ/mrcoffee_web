@@ -1,18 +1,175 @@
+@font-face {
+    font-family: font1;
+    src: url(../fonts/Vazirmatn-Regular.ttf);
+}
+@font-face {
+    font-family: font2;
+    src: url(../fonts/Vazirmatn-Black.ttf);
+}
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 body{
-    background: #000718;
+    background: url("../image/coffee-cup-beans.jpg");
     direction: rtl;
 }
-body, input,textarea, a{
-    font-family: 'Roboto', sans-serif;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all .2s;
+}
+:root {
+  --primaryColor: #a82424;
+  --secondaryColor: #52353d;
+  --mainDark: #52353d;
+  --mainWhite: #fff;
+  --mainGrey: #e5e5e5;
+  --slantedText: "Grand Hotel", cursive;
+  --mainTransition: all 0.3s linear;
+  --letterSpacing: 0.5rem;
+}
+body{
+    font-family: font1;
+    direction: rtl;
+}
+.container-fluid{
+    width: 100%;
+    height: auto;
+}
+.nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100px;
+    padding-right: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    box-shadow: 0 0 10px #000;
+    background: rgb(47, 27, 14);
+}
+#chk1{
+    display: none;
+}
+ion-icon {
+    cursor: pointer;
+    font-size: 20pt;
+    color: white;
+}
+ion-icon:hover {
+    color: #ff7800;
+}
+.menu-btn{
+    font-size: 30pt;
+    margin-top: 15px;
+}
+.nav .logo{
+    flex: 1;
+    color:#fff;
+    font-family: font2;
+    text-transform: uppercase;
+    font-size: 28pt;
+}
+.nav .search-box{
+    flex: 1;
+    position: relative;
+}
+.search-box input {
+    width:100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    background:#f2f2f2;
+    border-radius: 10px;
+    font-family: font1;
+    color:black;
+    font-size: 16px;
+    padding-left: 5px;
+    padding-right: 40px;
+    text-align: center;
+}
+.search-box button {
+    cursor: pointer;
+    width:40px;
+    height: 40px;
+    border-radius: 10px;
+    border:none;
+    position: absolute;
+    top:0;
+    right: 0;
+    transform: scale(0.9);
+    background: rgb(168, 68, 36);
+    color: #fff;
+}
+.search-box button:hover{
+    background: rgb(115, 45, 23);
+}
+.nav ul {
+    flex:2;
+    display: flex;
+    justify-content: space-evenly;
+}
+.nav ul li{
+    list-style: none;
+}
+.nav ul li a{
+    text-decoration: none;
+    color:#fff;
+    font-size: 16pt;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    transition: all .4s;
+}
+.nav ul li a:hover{
+    color: #ff7800;
+}
+.nav .menu{
+    font-size: 2.5em;
+    display: none;
+}
+.menu ion-icon:hover{
+    transform: rotate(45deg);
+}
+@media(max-width:1000px){
+    .logo h1 {
+        font-size: 40px;
+    }
+    .search-box button{
+        position: absolute;
+    }
+    .nav ul{
+        position: fixed;
+        top:100px;
+        right: -100%;
+        background: rgba(0,0,0,0.5);
+        height: calc(100vh - 100px);
+        width:50%;
+        flex-direction: column;
+        align-items: center;
+        transition: right 0.5s linear;
+    }
+    .nav .menu{
+        display: block;
+        width:100px;
+        text-align: center;
+    }
+    #chk1:checked ~ ul{
+        right: 0;
+
+    }
+}
+form{
+    font-family: font1;
 }
 #section-wrapper{
     width: 100%;
     padding: 10px;
+    margin-top: 200px;
 }
 .box-wrapper{
     position: relative;
@@ -34,7 +191,7 @@ body, input,textarea, a{
     color: #fff;
 }
 .info-title{
-    text-align: left;
+    text-align: right;
     font-size: 28px;
     letter-spacing: 0.5px;
 }
@@ -65,7 +222,8 @@ body, input,textarea, a{
     text-decoration: none;
 }
 .info-details li a:hover {
-    color: #52353d;
+    color: #da2f2f;
+    text-shadow: 1px 1px 1px saddlebrown;
 }
 .social-icons {
     list-style: none;
@@ -97,7 +255,7 @@ body, input,textarea, a{
     background: #ecf0f3;
 }
 .form-title{
-    text-align: left;
+    text-align: right;
     margin-left: 23px;
     font-size: 28px;
     letter-spacing: 0.5px;
@@ -183,5 +341,4 @@ body, input,textarea, a{
     .submit-button{
         margin: 10px 0px;
     }
-   
 }
