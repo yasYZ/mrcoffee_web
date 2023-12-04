@@ -1,10 +1,10 @@
 @font-face {
     font-family: font1;
-    src: url(../fonts/Vazirmatn-Regular.ttf);
+    src: url(Vazirmatn-Regular.ttf);
 }
 @font-face {
     font-family: font2;
-    src: url(../fonts/Vazirmatn-Black.ttf);
+    src: url(Vazirmatn-Black.ttf);
 }
 *{
     padding: 0;
@@ -12,7 +12,7 @@
     box-sizing: border-box;
 }
 body{
-    background: url("../image/coffee-cup-beans.jpg");
+    background: url("coffee-cup-beans.jpg");
     direction: rtl;
 }
 *{
@@ -186,7 +186,7 @@ form{
     float: left;
     display: block;
     border-radius: 30px 0px 0px 30px;
-    background: url("../image/IMG_20231202_153036_109.jpg");
+    background: url("IMG_20231202_153036_109.jpg");
     background-size: cover;
     color: #fff;
 }
@@ -341,4 +341,25 @@ form{
     .submit-button{
         margin: 10px 0px;
     }
+}
+.about-us{
+    margin-top: 680px;
+    text-align: center;
+    font-family: font1;
+    font-size: 16pt;
+    background-color: #ffffff;
+    width: 1700px;
+    margin-right: 78px;
+    height: 70px;
+}
+.about-us i{
+    color: #5b80b2;
+}
+.about-us li{
+    display: inline-block;
+    margin-right: 40px;
+    margin-top: 19px;
+}
+.about-us li span{
+    margin-left: 10px;
 }

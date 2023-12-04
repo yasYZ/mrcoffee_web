@@ -1,10 +1,10 @@
 @font-face {
     font-family: font1;
-    src: url(../fonts/Vazirmatn-Regular.ttf);
+    src: url(Vazirmatn-Regular.ttf);
 }
 @font-face {
     font-family: font2;
-    src: url(../fonts/Vazirmatn-Black.ttf);
+    src: url(Vazirmatn-Black.ttf);
 }
 *{
     margin: 0;
@@ -160,7 +160,7 @@ ion-icon:hover {
     position: relative;
     min-height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("../image/IMG_20231202_153022_478.jpg") center/cover no-repeat fixed;
+    url("IMG_20231202_153022_478.jpg") center/cover no-repeat fixed;
 }
 h2{
     position: absolute;
@@ -206,7 +206,7 @@ img {
 }
 .row .col {
     position: relative;
-    background: url("../image/compngwingbadil_prev_ui.png");
+    background: url("compngwingbadil_prev_ui.png");
     background-size: cover;
     width: 100%;
     max-width: 400px;
