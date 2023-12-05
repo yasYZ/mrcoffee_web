@@ -13,3 +13,7 @@ def contact_us(request):
 
 def about_us(request):
     return render(request, 'Aboutus.html')
+
+
+def products(request):
+    return render(request, 'Products.html')

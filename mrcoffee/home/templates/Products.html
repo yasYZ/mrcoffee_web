@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | محصولات</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="../static/css/Products.css">
+</head>
+<body>
+    <nav class="nav">
+            <div class="menu">
+            <label for="chk1">
+                <ion-icon class="menu-btn" name="grid"></ion-icon>
+            </label>
+        </div>
+        <div class="logo"><h1>Mr.Coffee</h1></div>
+        <div class="search-box">
+            <form>
+                <label>
+                    <input type ="text" name ="search" id ="srch" placeholder="جست و جو">
+                </label>
+                <button type ="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <ul>
+            <li><a href="/Home">خانه</a></li>
+            <li><a href="/Products">محصولات</a></li>
+            <li><a href="/AboutUs">درباره ما</a></li>
+            <li>
+                {% if user.is_authenticated %}
+                <a href="/Logout"><ion-icon name="log-out"></ion-icon></a>
+                {% else %}
+                <a href="/LoginSignup"><ion-icon name="log-in"></ion-icon></a>
+                {% endif %}
+                <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                <a href="/Cart"><ion-icon name="cart"></ion-icon></a>
+            </li>
+        </ul>
+    </nav>
+    <div class="special">
+        <h2>تخفیفی ها</h2>
+        <section class="row">
+            <article class="col">
+                <figure>
+                    <img src="">
+                    <figcaption>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</figcaption>
+                </figure>
+                <a href="#">بیشتر بخوانید</a>
+            </article>
+            <article class="col">
+                <figure>
+                    <img src="">
+                    <figcaption>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</figcaption>
+                </figure>
+                <a href="#">بیشتر بخوانید</a>
+            </article>
+            <article class="col">
+                <figure>
+                    <img src="">
+                    <figcaption>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</figcaption>
+                </figure>
+                <a href="#">بیشتر بخوانید</a>
+            </article>
+            <article class="col">
+                <figure>
+                    <img src="">
+                    <figcaption>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</figcaption>
+                </figure>
+                <a href="#">بیشتر بخوانید</a>
+            </article>
+        </section>
+        <div class="line"></div>
+    </div>
+
+</body>
+</html>

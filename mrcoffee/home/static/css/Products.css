@@ -1,0 +1,203 @@
+@font-face {
+    font-family: font1;
+    src: url(../fonts/Vazirmatn-Regular.ttf);
+}
+@font-face {
+    font-family: font2;
+    src: url(../fonts/Vazirmatn-Black.ttf);
+}
+@font-face {
+    font-family: font1;
+    src: url(../fonts/Vazirmatn-Regular.ttf);
+}
+@font-face {
+    font-family: font2;
+    src: url(../fonts/Vazirmatn-Black.ttf);
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background: url("../image/IMG_20231202_153032_402.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    direction: rtl;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all .2s;
+}
+:root {
+  --primaryColor: #a82424;
+  --secondaryColor: #52353d;
+  --mainDark: #52353d;
+  --mainWhite: #fff;
+  --mainGrey: #e5e5e5;
+  --slantedText: "Grand Hotel", cursive;
+  --mainTransition: all 0.3s linear;
+  --letterSpacing: 0.5rem;
+}
+body{
+    font-family: font1;
+    direction: rtl;
+}
+.container-fluid{
+    width: 100%;
+    height: auto;
+}
+.nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100px;
+    padding-right: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    box-shadow: 0 0 10px #000;
+    background: rgb(47, 27, 14);
+}
+#chk1{
+    display: none;
+}
+ion-icon {
+    cursor: pointer;
+    font-size: 20pt;
+    color: white;
+}
+ion-icon:hover {
+    color: #ff7800;
+}
+.menu-btn{
+    font-size: 30pt;
+    margin-top: 15px;
+}
+.nav .logo{
+    flex: 1;
+    color:#fff;
+    font-family: font2;
+    text-transform: uppercase;
+    font-size: 28pt;
+}
+.nav .search-box{
+    flex: 1;
+    position: relative;
+}
+.search-box input {
+    width:100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    background:#f2f2f2;
+    border-radius: 10px;
+    font-family: font1;
+    color:black;
+    font-size: 16px;
+    padding-left: 5px;
+    padding-right: 40px;
+    text-align: center;
+}
+.search-box button {
+    cursor: pointer;
+    width:40px;
+    height: 40px;
+    border-radius: 10px;
+    border:none;
+    position: absolute;
+    top:0;
+    right: 0;
+    transform: scale(0.9);
+    background: rgb(168, 68, 36);
+    color: #fff;
+}
+.search-box button:hover{
+    background: rgb(115, 45, 23);
+}
+.nav ul {
+    flex:2;
+    display: flex;
+    justify-content: space-evenly;
+}
+.nav ul li{
+    list-style: none;
+}
+.nav ul li a{
+    text-decoration: none;
+    color:#fff;
+    font-size: 16pt;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    transition: all .4s;
+}
+.nav ul li a:hover{
+    color: #ff7800;
+}
+.nav .menu{
+    font-size: 2.5em;
+    display: none;
+}
+.menu ion-icon:hover{
+    transform: rotate(45deg);
+}
+@media(max-width:1000px){
+    .logo h1 {
+        font-size: 40px;
+    }
+    .search-box button{
+        position: absolute;
+    }
+    .nav ul{
+        position: fixed;
+        top:100px;
+        right: -100%;
+        background: rgba(0,0,0,0.5);
+        height: calc(100vh - 100px);
+        width:50%;
+        flex-direction: column;
+        align-items: center;
+        transition: right 0.5s linear;
+    }
+    .nav .menu{
+        display: block;
+        width:100px;
+        text-align: center;
+    }
+    #chk1:checked ~ ul{
+        right: 0;
+
+    }
+}
+/* products css */
+.row .col{
+    display: inline-block;
+    margin-top: 50px;
+    margin-right: 15px;
+    width: 300px;
+    height: 350px;
+    background: #ffffff;
+}
+.row{
+    width: 100%;
+}
+.special h2{
+    margin-top: 150px;
+    text-align: center;
+    font-size: 18pt;
+    font-family: font1;
+}
+.line{
+    height: 0.5rem;
+    margin-top: 50px;
+    background: linear-gradient(
+        to left,
+        var(--primaryColor),
+        var(--secondaryColor),
+        var(--primaryColor)
+    );
+}
