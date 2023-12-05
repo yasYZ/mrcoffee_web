@@ -174,22 +174,46 @@ ion-icon:hover {
     }
 }
 /* products css */
+a{
+    text-decoration: none;
+    color: white;
+}
 .row .col{
     display: inline-block;
     margin-top: 50px;
     margin-right: 15px;
     width: 300px;
-    height: 350px;
-    background: #ffffff;
+    height: 520px;
+    background: url("../image/compngwingbadil_prev_ui.png") rgb(82, 53, 61);
+    border-radius: 10px;
+}
+.special{
+    width: 100%;
 }
 .row{
-    width: 100%;
+    width: 1300px;
+    margin: 0 auto;
 }
 .row .col figure{
     text-align: center;
 }
 .row .col a{
-    margin-right: 110px;
+    margin-right: 95px;
+    padding: 10px;
+    color: #ffffff;
+    background-color: #757575;
+    border-radius: 10px;
+    transition:all 0.4s;
+}
+.row .col a:hover {
+    color: #4b220a;
+}
+.col img{
+    transform: scale(0.9);
+    border-radius: 20px;
+}
+.col figcaption{
+    margin: 10px 0px 30px 0px;
 }
 .special h2{
     margin-top: 150px;
