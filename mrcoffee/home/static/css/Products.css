@@ -185,6 +185,12 @@ ion-icon:hover {
 .row{
     width: 100%;
 }
+.row .col figure{
+    text-align: center;
+}
+.row .col a{
+    margin-right: 110px;
+}
 .special h2{
     margin-top: 150px;
     text-align: center;
