@@ -11,7 +11,38 @@
     <link rel="stylesheet" href="../static/css/contactus.css">
 </head>
 <body>
+    <nav class="nav">
+        <div class="menu">
+            <label for="chk1">
+                <ion-icon class="menu-btn" name="grid"></ion-icon>
+            </label>
+        </div>
+        <div class="logo"><h1>Mr.Coffee</h1></div>
+        <div class="search-box">
+            <form>
+                <label>
+                    <input type ="text" name ="search" id ="srch" placeholder="جست و جو">
+                </label>
+                <button type ="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+            <ul>
+                <li><a href="/Home">خانه</a></li>
+                <li><a href="/Products">محصولات</a></li>
+                <li><a href="/AboutUs">درباره ما</a></li>
+                <li>
+                    {% if user.is_authenticated %}
+                        <a href="/Logout"><ion-icon name="log-out"></ion-icon></a>
+                    {% else %}
+                        <a href="/LoginSignup"><ion-icon name="log-in"></ion-icon></a>
+                    {% endif %}
+                    <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                    <a href="/Cart"><ion-icon name="cart"></ion-icon></a>
+                </li>
+            </ul>
+        </nav>
     <section>
+        <div class="main-circle"><a>درباره ما</a></div>
         <ul class="about-us">
             <li>
                 <i class="fas fa-phone-alt"></i>
@@ -23,13 +54,15 @@
             </li>
             <li>
                 <i class="fas fa-globe"></i>
-                <span>آدرس:</span> <a href="#">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استف...</a>
+                <span>آدرس:</span> <a href="#">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</a>
             </li>
             <li>
                 <i class="fas fa-location-arrow"></i>
-                <span><a>مکان</a></span>
+                <span>مکان</span>
             </li>
         </ul>
     </section>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
