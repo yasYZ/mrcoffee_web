@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,70 +44,37 @@
     </nav>
     <div class="special">
         <h2>تخفیفی ها</h2>
-        <section class="row">
-            <article class="col">
-                <figure>
-                    <img src="../static/image/SPRK_default_preset_name_custom_1.png">
-                    <figcaption>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</figcaption>
-                </figure>
-                <a href="#">بیشتر بخوانید</a>
-            </article>
-            <article class="col">
-                <figure>
-                    <img src="../static/image/SPRK_default_preset_name_custom_1.png">
-                    <figcaption>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</figcaption>
-                </figure>
-                <a href="#">بیشتر بخوانید</a>
-            </article>
-            <article class="col">
-                <figure>
-                    <img src="../static/image/SPRK_default_preset_name_custom_1.png">
-                    <figcaption>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</figcaption>
-                </figure>
-                <a href="#">بیشتر بخوانید</a>
-            </article>
-            <article class="col">
-                <figure>
-                    <img src="../static/image/SPRK_default_preset_name_custom_1.png">
-                    <figcaption>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</figcaption>
-                </figure>
-                <a href="#">بیشتر بخوانید</a>
-            </article>
-        </section>
+        {% for item in products %}
+        {% if item.is_sale %}
+            <section class="row">
+                <article class="col">
+                    <figure>
+                        <img src="{{ item.picture.url }}">
+                        <figcaption>{{ item.discription }}</figcaption>
+                        <del>{{ item.sale_price }}</del><p>{{ item.price }}</p>
+                    </figure>
+                    <a href="#">بیشتر بخوانید</a>
+                </article>
+            </section>
+        {% endif %}
+        {% endfor %}
         <div class="line"></div>
     </div>
         <div class="Normal">
         <h2>محصولات</h2>
-        <section class="row">
-            <article class="col">
-                <figure>
-                    <img src="../static/image/SPRK_default_preset_name_custom_1.png">
-                    <figcaption>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</figcaption>
-                </figure>
-                <a href="#">بیشتر بخوانید</a>
-            </article>
-            <article class="col">
-                <figure>
-                    <img src="../static/image/SPRK_default_preset_name_custom_1.png">
-                    <figcaption>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</figcaption>
-                </figure>
-                <a href="#">بیشتر بخوانید</a>
-            </article>
-            <article class="col">
-                <figure>
-                    <img src="../static/image/SPRK_default_preset_name_custom_1.png">
-                    <figcaption>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</figcaption>
-                </figure>
-                <a href="#">بیشتر بخوانید</a>
-            </article>
-            <article class="col">
-                <figure>
-                    <img src="../static/image/SPRK_default_preset_name_custom_1.png">
-                    <figcaption>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</figcaption>
-                </figure>
-                <a href="#">بیشتر بخوانید</a>
-            </article>
-        </section>
+        {% for item in products%}
+            <section class="row">
+                <article class="col">
+                    <figure>
+                        <img src="{{ item.picture }}">
+                        <figcaption>{{ item.name }}</figcaption>
+                        <figcaption>{{ item.discription }}</figcaption>
+                        <p>{{ item.price }}</p>
+                    </figure>
+                    <a href="/Products/<item.id>/">بیشتر بخوانید</a>
+                </article>
+            </section>
+        {% endfor %}
         <div class="line"></div>
     </div>
     <footer class="footer">
