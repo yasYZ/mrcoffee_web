@@ -6,23 +6,20 @@
     font-family: font2;
     src: url(../fonts/Vazirmatn-Black.ttf);
 }
-@font-face {
-    font-family: font1;
-    src: url(../fonts/Vazirmatn-Regular.ttf);
-}
-@font-face {
-    font-family: font2;
-    src: url(../fonts/Vazirmatn-Black.ttf);
-}
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 body{
-    background: url("../image/IMG_20231202_153032_402.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+    height: 0.5rem;
+    margin-top: 50px;
+    background: linear-gradient(
+        to left,
+        rgba(145, 53, 53, 0.59),
+        white,
+        rgba(145, 53, 53, 0.59)
+    );
     direction: rtl;
     font-family: font1;
     direction: rtl;
@@ -220,6 +217,11 @@ a{
     background: url("../image/compngwingbadil_prev_ui.png") rgb(82, 53, 61);
     border-radius: 10px;
     position: relative;
+    transition: all 1s;
+    box-shadow: 5px 5px 10px gray;
+}
+.row .col:hover{
+    transform: scale(1.05);
 }
 .special{
     width: 100%;
@@ -231,17 +233,25 @@ a{
 .row .col figure{
     text-align: center;
 }
-.row .col a{
-    margin-right: 95px;
-    padding: 10px;
+.row .col .btn {
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(
+        to left,
+        #800606,
+        #da0d0d,
+        #800606
+    );
     color: #ffffff;
-    background-color: #757575;
-    border-radius: 10px;
-    transition:all 0.4s;
+    padding: 10px 20px;
+    border-radius: 40px;
+    margin-top: 20px;
+    margin-right: 90px;
+    text-decoration: none;
+    transition: all 0.5s;
 }
-.row .col a:hover {
-    color: #4b220a;
-
+.col a:hover{
+    transform: scale(1.1);
 }
 .col img{
     transform: scale(0.9);
@@ -258,15 +268,22 @@ a{
     text-align: center;
 }
 .special h2{
+    color: white;
     text-shadow:
-        -1px -1px 0 #ffffff,
-        1px -1px 0 #ffffff,
-        -1px 1px 0 #ffffff,
-        1px 1px 0 #ffffff;
+        2px 2px 20px #000000,2px 2px 20px #000000;
     margin-top: 150px;
     text-align: center;
-    font-size: 18pt;
+    font-size: 40pt;
     font-family: font1;
+}
+.Normal h2{
+    color: white;
+    text-shadow:
+        2px 2px 20px #000000,2px 2px 20px #000000;
+    margin-top: 150px;
+    text-align: center;
+    font-size: 40pt;
+    font-family: font2;
 }
 figure .price{
     color: white;
@@ -282,17 +299,6 @@ figure .price{
         var(--secondaryColor),
         var(--primaryColor)
     );
-}
-.Normal h2{
-    text-shadow:
-        -1px -1px 0 #ffffff,
-        1px -1px 0 #ffffff,
-        -1px 1px 0 #ffffff,
-        1px 1px 0 #ffffff;
-    margin-top: 150px;
-    text-align: center;
-    font-size: 18pt;
-    font-family: font1;
 }
 .Normal{
     width: 100%;
