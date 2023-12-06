@@ -241,6 +241,7 @@ a{
 }
 .row .col a:hover {
     color: #4b220a;
+
 }
 .col img{
     transform: scale(0.9);
@@ -285,6 +286,11 @@ a{
 .Normal{
     width: 100%;
 }
+.price{
+    color: white;
+}
+/* product details */
+
 /* footer */
 .footer {
     background: var(--mainDark);

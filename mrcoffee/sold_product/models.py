@@ -26,6 +26,7 @@ class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, default=1)
     is_special = models.BooleanField(default=False)
     is_sale = models.BooleanField(default=False)
+    is_exists = models.BooleanField(default=True)
     sale_price = models.DecimalField(default=0, max_digits=100, decimal_places=0)
     picture = models.ImageField(upload_to='static/image/')
 
