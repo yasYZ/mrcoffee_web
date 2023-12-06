@@ -44,46 +44,46 @@
     </nav>
     <div class="special">
         <h2>تخفیفی ها</h2>
-        {% for item in products %}
-        {% if item.is_sale %}
             <section class="row">
-                <article class="col">
-                    <figure>
-                        <img src="../../{{ item.picture }}">
-                        <figcaption>{{ item.name }}</figcaption>
-                        <figcaption>{{ item.discription }}</figcaption>
-                        {% if item.price > 0 %}
-                            <p class="price">{{ item.price }}T</p>
-                        {% elif item.price == 0%}
-                            <p class="price">رایگان</p>
-                        {% endif %}
-                    </figure>
-                    <a href="/Product/{{ item.id }}/">بیشتر بخوانید</a>
-                </article>
+                {% for item in products %}
+                    {% if item.is_sale %}
+                        <article class="col">
+                            <figure>
+                                <img src="../../{{ item.picture }}">
+                                <figcaption>{{ item.name }}</figcaption>
+                                <figcaption>{{ item.discription }}</figcaption>
+                                {% if item.price > 0 %}
+                                    <p class="price">{{ item.price }}T</p>
+                                {% elif item.price == 0%}
+                                    <p class="price">رایگان</p>
+                                {% endif %}
+                            </figure>
+                            <a href="/Product/{{ item.id }}/">بیشتر بخوانید</a>
+                        </article>
+                    {% endif %}
+                {% endfor %}
             </section>
-        {% endif %}
-        {% endfor %}
         <div class="line"></div>
     </div>
         <div class="Normal">
         <h2>محصولات</h2>
-        {% for item in products%}
             <section class="row">
-                <article class="col">
-                    <figure>
-                        <img src="../../{{ item.picture }}">
-                        <figcaption>{{ item.name }}</figcaption>
-                        <figcaption>{{ item.discription }}</figcaption>
-                        {% if item.price > 0 %}
-                            <p class="price">{{ item.price }}T</p>
-                        {% elif item.price == 0%}
-                            <p class="price">رایگان</p>
-                        {% endif %}
-                    </figure>
-                    <a href="/Product/{{ item.id }}/">بیشتر بخوانید</a>
-                </article>
+                {% for item in products%}
+                    <article class="col">
+                        <figure>
+                            <img src="../../{{ item.picture }}">
+                            <figcaption>{{ item.name }}</figcaption>
+                            <figcaption>{{ item.discription }}</figcaption>
+                            {% if item.price > 0 %}
+                                <p class="price">{{ item.price }}T</p>
+                            {% elif item.price == 0%}
+                                <p class="price">رایگان</p>
+                            {% endif %}
+                        </figure>
+                        <a href="/Product/{{ item.id }}/">بیشتر بخوانید</a>
+                    </article>
+                {% endfor %}
             </section>
-        {% endfor %}
         <div class="line"></div>
     </div>
     <footer class="footer">
