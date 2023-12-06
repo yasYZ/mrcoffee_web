@@ -121,7 +121,7 @@ USE_THOUSAND_SEPARATOR = True
 
 STATIC_URL = 'static/'
 STATICFILES_URLS = ['static/']
-MEDIA_URL = '../'
+MEDIA_URL = '../../'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'home/')
 
 # Default primary key field type
