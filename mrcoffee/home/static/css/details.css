@@ -1,0 +1,278 @@
+@font-face {
+    font-family: font1;
+    src: url(../fonts/Vazirmatn-Regular.ttf);
+}
+@font-face {
+    font-family: font2;
+    src: url(../fonts/Vazirmatn-Black.ttf);
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 0.5rem;
+    margin-top: 50px;
+    background: linear-gradient(
+        to left,
+        rgba(145, 53, 53, 0.59),
+        white,
+        rgba(145, 53, 53, 0.59)
+    );
+    direction: rtl;
+    font-family: font1;
+    direction: rtl;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all .2s;
+}
+:root {
+  --primaryColor: #a82424;
+  --secondaryColor: #52353d;
+  --mainDark: #52353d;
+  --mainWhite: #fff;
+  --mainGrey: #e5e5e5;
+  --slantedText: "Grand Hotel", cursive;
+  --mainTransition: all 0.3s linear;
+  --letterSpacing: 0.5rem;
+}
+.container-fluid{
+    width: 100%;
+    height: auto;
+}
+.nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100px;
+    padding-right: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    box-shadow: 0 0 10px #000;
+    background: rgb(47, 27, 14);
+}
+#chk1{
+    display: none;
+}
+ion-icon {
+    cursor: pointer;
+    font-size: 20pt;
+    color: white;
+}
+ion-icon:hover {
+    color: #ff7800;
+}
+.menu-btn{
+    font-size: 30pt;
+    margin-top: 15px;
+}
+.nav .logo{
+    flex: 1;
+    color:#fff;
+    font-family: font2;
+    text-transform: uppercase;
+    font-size: 28pt;
+}
+.nav .search-box{
+    flex: 1;
+    position: relative;
+}
+.search-box input {
+    width:100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    background:#f2f2f2;
+    border-radius: 10px;
+    font-family: font1;
+    color:black;
+    font-size: 16px;
+    padding-left: 5px;
+    padding-right: 40px;
+    text-align: center;
+}
+.search-box button {
+    cursor: pointer;
+    width:40px;
+    height: 40px;
+    border-radius: 10px;
+    border:none;
+    position: absolute;
+    top:0;
+    right: 0;
+    transform: scale(0.9);
+    background: rgb(168, 68, 36);
+    color: #fff;
+}
+.search-box button:hover{
+    background: rgb(115, 45, 23);
+}
+.nav ul {
+    flex:2;
+    display: flex;
+    justify-content: space-evenly;
+}
+.nav ul li{
+    list-style: none;
+}
+.nav ul li a{
+    text-decoration: none;
+    color:#fff;
+    font-size: 16pt;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    transition: all .4s;
+}
+.nav ul li a:hover{
+    color: #ff7800;
+}
+.nav .menu{
+    font-size: 2.5em;
+    display: none;
+}
+.menu ion-icon:hover{
+    transform: rotate(45deg);
+}
+@media(max-width:1000px){
+    .logo h1 {
+        font-size: 40px;
+    }
+    .search-box button{
+        position: absolute;
+    }
+    .nav ul{
+        position: fixed;
+        top:100px;
+        right: -100%;
+        background: rgba(0,0,0,0.5);
+        height: calc(100vh - 100px);
+        width:50%;
+        flex-direction: column;
+        align-items: center;
+        transition: right 0.5s linear;
+    }
+    .nav .menu{
+        display: block;
+        width:100px;
+        text-align: center;
+    }
+    #chk1:checked ~ ul{
+        right: 0;
+
+    }
+}
+/* details start */
+.container{
+    width: 100%;
+}
+.row{
+    width: 1300px;
+    margin: 0 auto;
+}
+.row .col{
+    display: inline-block;
+    margin-top: 80px;
+    margin-right: 150px;
+    width: 300px;
+    height: 650px;
+    background: url("../image/compngwingbadil_prev_ui.png") rgb(82, 53, 61);
+    border-radius: 0px 10px 10px 0px;
+}
+.item-name{
+    margin-top: -640px;
+    margin-right: 15px;
+    font-family: font2;
+    font-size: 22pt;
+    color: white;
+}
+.item-discription{
+    margin-right: 15px;
+    font-family: font1;
+    font-size: 16pt;
+    color: white;
+}
+.col img{
+    position: absolute;
+    margin-right: 570px;
+    margin-top: -630px;
+    border-radius: 10px 10px 10px 10px;
+}
+.img-box{
+    height: 650px;
+    width: 340px;
+    background-color: #898989;
+    margin-right: 550px;
+    border-radius: 10px 0px 0px 10px;
+}
+.none {
+    margin-right: 300px;
+    margin-top: -650px;
+    width: 290px;
+    height: 650px;
+    background: linear-gradient(
+            to left,
+            #52353DFF,
+            #5d484e,
+            #6d6668,
+            #898989FF
+    );
+}
+.btn{
+    position: absolute;
+    top: 680px;
+    left: 800px;
+    width: 400px;
+    height: 70px;
+    font-family: font1;
+    font-size: 20pt;
+    color: white;
+    background-color: #2F1B0EFF;
+    border-radius: 20px;
+    border: none;
+    transition:all 0.5s;
+}
+.btn:hover{
+    background-color: #4b220a;
+    color: white;
+    transform: scale(1.1);
+}
+#carry{
+    position: absolute;
+    margin-top: 100px;
+    margin-right: 620px;
+}
+.col a{
+    color: white;
+}
+.col i{
+    color: white;
+}
+.social-icons {
+    list-style: none;
+    text-align: center;
+    margin: 20px 0px;
+}
+.social-icons li {
+    display: inline-block;
+}
+.social-icons li i {
+    background: #52353d;
+    color: #fff;
+    padding: 15px;
+    font-size: 20px;
+    border-radius: 22%;
+    margin: 0px 5px;
+    cursor: pointer;
+    transition: all .5s;
+}
+.social-icons li i:hover {
+    background: #fff;
+    color: #000000;
+}

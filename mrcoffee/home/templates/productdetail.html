@@ -1,14 +1,14 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mr.Coffee | مستر کافی</title>
-    <link rel="stylesheet" href="../static/css/Products.css">
+    <link rel="stylesheet" href="../static/css/details.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div class="container-fluid">
     <nav class="nav">
             <div class="menu">
             <label for="chk1">
@@ -39,32 +39,26 @@
             </li>
         </ul>
     </nav>
-    <footer class="footer">
-        <div class="section-center">
-            <div class="social-icons">
-            <!-- social icon -->
-            <a href="#" class="social-icon">
-            <ion-icon name="navigate"></ion-icon>
-            </a>
-            <!-- end of social icon -->
-            <!-- social icon -->
-            <a href="#" class="social-icon">
-            <ion-icon name="logo-twitter"></ion-icon>
-            </a>
-            <!-- end of social icon -->
-            <!-- social icon -->
-            <a href="#" class="social-icon">
-                <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-            <!-- end of social icon -->
-        </div>
-        <p class="footer-text">
-            .&copy;2023 <span class="text-primary">MR.Coffee</span>
-            all right reserved by Topop
-        </p>
-        </div>
-    </footer>
-</div>
+    <div class="container">
+        <section class="row">
+            {% for item in details %}
+            <article class="col">
+                <figure>
+                    <div class="img-box"></div>
+                    <img src="../../{{ item.picture }}">
+                    <div class="none"></div>
+                    <figcaption class="item-name">{{ item.name }}</figcaption>
+                    <figcaption class="item-discription">{{ item.discription }}</figcaption>
+                </figure>
+                <ul class="social-icons">
+                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                </ul>                <a href="#"><button class="btn">افزودن به سبد خرید</button></a>
+            </article>
+            {% endfor %}
+        </section>
+    </div>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
