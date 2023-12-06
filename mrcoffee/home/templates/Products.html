@@ -52,10 +52,15 @@
                                 <img src="../../{{ item.picture }}">
                                 <figcaption>{{ item.name }}</figcaption>
                                 <figcaption>{{ item.discription }}</figcaption>
-                                {% if item.price > 0 %}
-                                    <p class="price">{{ item.price }}T</p>
-                                {% elif item.price == 0%}
-                                    <p class="price">رایگان</p>
+                                <del class="price">{{ item.sale_price }}</del>
+                                {% if item.is_exists %}
+                                    {% if item.price > 0 %}
+                                        <p class="price">{{ item.price }}T</p>
+                                    {% elif item.price == 0%}
+                                        <p class="price">رایگان</p>
+                                    {% endif %}
+                                {% else %}
+                                    <p class="price">ناموحود</p>
                                 {% endif %}
                             </figure>
                             <a href="/Product/{{ item.id }}/">بیشتر بخوانید</a>
