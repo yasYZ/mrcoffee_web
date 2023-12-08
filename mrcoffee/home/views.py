@@ -18,3 +18,9 @@ def about_us(request):
 
 def products(request):
     return render(request, 'Products.html')
+
+def login_signup(request):
+    return render(request, 'LoginReg.html')
+
+def forgot_password(request):
+    return render(request, 'ForgotPass.html')

@@ -40,10 +40,6 @@ body{
   --mainTransition: all 0.3s linear;
   --letterSpacing: 0.5rem;
 }
-.container-fluid{
-    width: 100%;
-    height: auto;
-}
 .nav{
     position: fixed;
     top: 0;
