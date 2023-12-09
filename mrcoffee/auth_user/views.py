@@ -23,16 +23,15 @@ def login_register(request):
         else:
             messages.success(request, "There was a problem in logging in")
             return redirect("/LoginSignup")
-    else:
-        return render(request, 'En/LoginSignup.html')
+    return render(request, 'htmls/Fa/LoginReg.html')
 
 
 def forgot_password_done(request):
-    render(request, 'En/ForgetPassword_Done.html')
+    render(request, 'htmls/Fa/ForgetPassDone.html')
 
 
 def reset_password_done(request):
-    render(request, 'En/ResetPassword_Done.html')
+    render(request, 'htmls/Fa/ResetPassDone.html')
 
 
 def reset_password(request, uidb64, token):
@@ -52,7 +51,7 @@ def reset_password(request, uidb64, token):
             return redirect('/Home')
         else:
             messages.error(request, "Your password doesnt match")
-    return render(request, 'En/ResetPassword.html', context)
+    return render(request, 'htmls/Fa/ResetPass.html', context)
 
 
 def forgot_password(request):
@@ -96,10 +95,10 @@ def forgot_password(request):
 
             send_mail(subject='Password Reset', message=message, from_email=EMAIL_HOST_USER,
                       recipient_list=[email], fail_silently=False)
-            return render(request, 'En/ForgotPassword_Done.html')
+            return render(request, 'htmls/Fa/ForgotPassDone.html')
         except ObjectDoesNotExist:
             return HttpResponse("<h2>We encountered a problem while sending the email.</h2>")
-    return render(request, 'En/ForgotPassword.html')
+    return render(request, 'htmls/Fa/ForgotPass.html')
 
 
 def log_out(request):
@@ -123,4 +122,4 @@ def register(request):
                 messages.error(request, f"Registration failed. Error: {str(ex)}")
         else:
             messages.error(request, "Invalid form data. Please try again.")
-    return render(request, 'En/LoginSignup.html')
+    return render(request, 'htmls/Fa/LoginReg.html')

@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animated Login & Registration Form HTML CSS | Codehal</title>
-    <link rel="stylesheet" href="../static/css/loginreg.css">
+    <link rel="stylesheet" href="../../../static/css/loginreg.css">
 </head>
 <body>
     <nav class="nav">
@@ -40,21 +41,20 @@
     </nav>
     <div class="wrapper">
         <div class="form-wrapper login">
-            <form action="">
+            <form method="POST" action="/ForgotPassword/">
+                {% csrf_token %}
+                {{ form.errors }}
                 <h2>بازیبابی رمز ورود</h2>
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="mail"></ion-icon>
                     </span>
-                    <input type="password" placeholder="تایین رمز عبور" required>
-                </div>
-                <div class="input-box">
-                    <span class="icon">
-                        <ion-icon name="mail"></ion-icon>
-                    </span>
-                    <input type="password" placeholder="تایید رمز عبور" required>
+                    <input type="email" placeholder="ایمیل" name="forgot-mail" required>
                 </div>
                 <button type="submit">تایید</button>
+                <div class="sign-link">
+                    <p><a href="/LoginSignup">رمز ورود را پیدا کردم</a></p>
+                </div>
             </form>
         </div>
     </div>

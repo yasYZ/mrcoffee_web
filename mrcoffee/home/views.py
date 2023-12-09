@@ -5,22 +5,16 @@ from django.shortcuts import render
 
 def home(request):
     # product = Product.object.all()
-    return render(request, 'index.html')
+    return render(request, 'htmls/Fa/index.html')
 
 
 def contact_us(request):
-    return render(request, 'Contactus.html')
+    return render(request, 'htmls/Fa/Contactus.html')
 
 
 def about_us(request):
-    return render(request, 'Aboutus.html')
+    return render(request, 'htmls/Fa/Aboutus.html')
 
 
 def products(request):
-    return render(request, 'Products.html')
-
-def login_signup(request):
-    return render(request, 'LoginReg.html')
-
-def forgot_password(request):
-    return render(request, 'ForgotPass.html')
+    return render(request, 'htmls/Fa/Products.html')

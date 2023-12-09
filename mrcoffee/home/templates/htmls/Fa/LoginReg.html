@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animated Login & Registration Form HTML CSS | Codehal</title>
-    <link rel="stylesheet" href="../static/css/loginreg.css">
+    <link rel="stylesheet" href="../../../static/css/loginreg.css">
 </head>
 <body>
     <nav class="nav">
@@ -40,19 +40,20 @@
     </nav>
     <div class="wrapper">
         <div class="form-wrapper login">
-            <form action="">
+            <form method="POST" action="/LoginSignup/">
+                {% csrf_token %}
                 <h2>ورود</h2>
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="mail"></ion-icon>
                     </span>
-                    <input type="email" placeholder="ایمیل" required>
+                    <input type="text" placeholder="نام کاربری" name="username" required>
                 </div>
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="lock-closed"></ion-icon>
                     </span>
-                    <input type="password" placeholder="پسورد" required>
+                    <input type="password" placeholder="پسورد" name="password" required>
                 </div>
                 <div class="forgot-pass">
                     <a href="/ForgotPassword">پسورد را فراموش کردید؟</a>
@@ -64,25 +65,26 @@
             </form>
         </div>
         <div class="form-wrapper register">
-            <form action="">
+            <form id="form" method="POST" action="/Register/">
+                {% csrf_token %}
                 <h2>ساخت حساب کاربری</h2>
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="person"></ion-icon>
                     </span>
-                    <input type="text" placeholder="نام کامل" required>
+                    <input type="text" placeholder="نام کامل" name="regusername" required>
                 </div>
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="mail"></ion-icon>
                     </span>
-                    <input type="email" placeholder="ایمیل" required>
+                    <input type="email" placeholder="ایمیل" name="regemail" required>
                 </div>
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="lock-closed"></ion-icon>
                     </span>
-                    <input type="password" placeholder="پسورد" required>
+                    <input type="password" placeholder="پسورد" name="regpassword" required>
                 </div>
                 <button type="submit">تایید</button>
                 <div class="sign-link">
@@ -93,6 +95,6 @@
     </div>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="../static/js/script.js"></script>
+    <script src="../../../static/js/script.js"></script>
 </body>
 </html>
