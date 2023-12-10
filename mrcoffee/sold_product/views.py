@@ -13,4 +13,4 @@ def products(request):
 
 def product_detail(request, pi):
     product = Product.objects.filter(id=pi)
-    return render(request, 'productdetail.html', {'details': product})
+    return render(request, 'urlProduct/intPI/productdetail.html', {'details': product})

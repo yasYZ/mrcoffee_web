@@ -122,4 +122,4 @@ def register(request):
                 messages.error(request, f"Registration failed. Error: {str(ex)}")
         else:
             messages.error(request, "Invalid form data. Please try again.")
-    return render(request, 'LoginReg.html')
+    return render(request, 'urlProduct/intPI/LoginReg.html')
