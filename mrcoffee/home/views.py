@@ -5,16 +5,12 @@ from django.shortcuts import render
 
 def home(request):
     # product = Product.object.all()
-    return render(request, 'htmls/Fa/index.html')
+    return render(request, 'index.html')
 
 
 def contact_us(request):
-    return render(request, 'htmls/Fa/Contactus.html')
+    return render(request, 'Contactus.html')
 
 
 def about_us(request):
-    return render(request, 'htmls/Fa/Aboutus.html')
-
-
-def products(request):
-    return render(request, 'htmls/Fa/Products.html')
+    return render(request, 'Aboutus.html')

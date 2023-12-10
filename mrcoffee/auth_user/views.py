@@ -23,15 +23,15 @@ def login_register(request):
         else:
             messages.success(request, "There was a problem in logging in")
             return redirect("/LoginSignup")
-    return render(request, 'htmls/Fa/LoginReg.html')
+    return render(request, 'LoginReg.html')
 
 
 def forgot_password_done(request):
-    render(request, 'htmls/Fa/ForgetPassDone.html')
+    render(request, 'ForgetPassDone.html')
 
 
 def reset_password_done(request):
-    render(request, 'htmls/Fa/ResetPassDone.html')
+    render(request, 'ResetPassDone.html')
 
 
 def reset_password(request, uidb64, token):
@@ -51,7 +51,7 @@ def reset_password(request, uidb64, token):
             return redirect('/Home')
         else:
             messages.error(request, "Your password doesnt match")
-    return render(request, 'htmls/Fa/ResetPass.html', context)
+    return render(request, 'ResetPass.html', context)
 
 
 def forgot_password(request):
@@ -64,7 +64,7 @@ def forgot_password(request):
             reset_link = request.build_absolute_uri(f'/ResetPassword/{uidb64}/{token}/')
             message = f"""
                 ______________________________
-                Fa
+                intPI
                 سلام {user.username}!
 
 
@@ -95,10 +95,10 @@ def forgot_password(request):
 
             send_mail(subject='Password Reset', message=message, from_email=EMAIL_HOST_USER,
                       recipient_list=[email], fail_silently=False)
-            return render(request, 'htmls/Fa/ForgotPassDone.html')
+            return render(request, 'ForgotPassDone.html')
         except ObjectDoesNotExist:
             return HttpResponse("<h2>We encountered a problem while sending the email.</h2>")
-    return render(request, 'htmls/Fa/ForgotPass.html')
+    return render(request, 'ForgotPass.html')
 
 
 def log_out(request):
@@ -122,4 +122,4 @@ def register(request):
                 messages.error(request, f"Registration failed. Error: {str(ex)}")
         else:
             messages.error(request, "Invalid form data. Please try again.")
-    return render(request, 'htmls/Fa/LoginReg.html')
+    return render(request, 'LoginReg.html')

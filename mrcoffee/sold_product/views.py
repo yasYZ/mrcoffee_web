@@ -8,10 +8,9 @@ from .models import Product
 
 def products(request):
     all_product = Product.objects.all()
-
-    return render(request, 'htmls/Fa/Products.html', {'products': all_product})
+    return render(request, 'Products.html', {'products': all_product})
 
 
 def product_detail(request, pi):
     product = Product.objects.filter(id=pi)
-    return render(request, 'htmls/Fa/productdetail.html', {'details': product})
+    return render(request, 'productdetail.html', {'details': product})
