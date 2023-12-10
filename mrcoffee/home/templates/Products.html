@@ -30,17 +30,17 @@
             </form>
         </div>
         <ul>
-            <li><a href="/Home">خانه</a></li>
-            <li><a href="/Products">محصولات</a></li>
-            <li><a href="/AboutUs">درباره ما</a></li>
+            <li><a href="/home">خانه</a></li>
+            <li><a href="/products">محصولات</a></li>
+            <li><a href="/about-us">درباره ما</a></li>
             <li>
                 {% if user.is_authenticated %}
-                <a href="/Logout"><ion-icon name="log-out"></ion-icon></a>
+                <a href="/logout"><ion-icon name="log-out"></ion-icon></a>
                 {% else %}
-                <a href="/LoginSignup"><ion-icon name="log-in"></ion-icon></a>
+                <a href="/login-signup"><ion-icon name="log-in"></ion-icon></a>
                 {% endif %}
                 <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
-                <a href="/Cart"><ion-icon name="cart"></ion-icon></a>
+                <a href="/cart"><ion-icon name="cart"></ion-icon></a>
             </li>
         </ul>
     </nav>
@@ -65,7 +65,7 @@
                                     <p class="price">ناموحود</p>
                                 {% endif %}
                             </figure>
-                        <a class="btn" href="/Product/{{ item.id }}">بیشتر بخوانید</a>
+                        <a class="btn" href="/product/{{ item.id }}">بیشتر بخوانید</a>
                         <span class="sale">40%-</span>
                         </article>
                     {% endif %}
@@ -78,7 +78,7 @@
             <section class="row">
                 {% for item in products%}
                     {% if item.is_sale%}
-                    <article class="col-12 col-md-6 col-xl-6 col-xxl-3">
+                    <article class="col">
                         <figure>
                             <img src="../../{{ item.picture }}">
                             <figcaption class="item-name">{{ item.name }}</figcaption>
@@ -94,7 +94,7 @@
                                 <p class="price">ناموحود</p>
                             {% endif %}
                         </figure>
-                        <a class="btn" href="/Product/{{ item.id }}">بیشتر بخوانید</a>
+                        <a class="btn" href="/product/{{ item.id }}">بیشتر بخوانید</a>
                         <span class="sale">40%-</span>
                     </article>
                     {% else %}
@@ -109,7 +109,7 @@
                                 <p class="price">رایگان</p>
                             {% endif %}
                         </figure>
-                        <a class="btn" href="/Product/{{ item.id }}">بیشتر بخوانید</a>
+                        <a class="btn" href="/product/{{ item.id }}">بیشتر بخوانید</a>
                     </article>
                     {% endif %}
                 {% endfor %}

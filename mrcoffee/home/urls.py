@@ -4,8 +4,8 @@ from . import views
 
 
 urlpatterns = [
-    path('', RedirectView.as_view(url="/Home", permanent=True)),
-    path('Home/', views.home, name='home'),
-    path('ContactUs/', views.contact_us, name='contact_us'),
-    path('AboutUs/', views.about_us, name='about_us'),
+    path('', RedirectView.as_view(url="/home", permanent=True)),
+    path('home/', views.home, name='home'),
+    path('contactUs/', views.contact_us, name='contact_us'),
+    path('about-us/', views.about_us, name='about_us'),
 ]
