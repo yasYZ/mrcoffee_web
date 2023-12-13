@@ -4,13 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c578bd74-36d9-4b78-a61d-3c1a64578182" name="Changes" comment="BackEnd V1.0.0.10">
-      <change beforePath="$PROJECT_DIR$/mrcoffee/auth_user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mrcoffee/auth_user/views.py" afterDir="false" />
+    <list default="true" id="c578bd74-36d9-4b78-a61d-3c1a64578182" name="Changes" comment="BackEnd V1.0.0.20">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrcoffee/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mrcoffee/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrcoffee/home/static/css/details.css" beforeDir="false" afterPath="$PROJECT_DIR$/mrcoffee/home/static/css/details.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrcoffee/home/templates/urlProduct/intPI/productdetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/mrcoffee/home/templates/urlProduct/intPI/productdetail.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -30,20 +41,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Main",
-    "last_opened_file_path": "E:/python_projects/mrcoffee_web",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/python_projects/mrcoffee_web&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\python_projects\mrcoffee_web\mrcoffee\home\templates\urlProduct\intPI" />
+      <recent name="E:\python_projects\mrcoffee_web\mrcoffee\home\templates\urlProduct" />
+      <recent name="E:\python_projects\mrcoffee_web\mrcoffee\home\templates" />
+      <recent name="E:\python_projects\mrcoffee_web\mrcoffee\home\templates\urlProdcut\intPI" />
+      <recent name="E:\python_projects\mrcoffee_web\mrcoffee\sold_product\static\css" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -54,6 +76,17 @@
       <updated>1701533465360</updated>
       <workItem from="1701533466463" duration="500000" />
       <workItem from="1701533992828" duration="310000" />
+      <workItem from="1701869979154" duration="225000" />
+      <workItem from="1701870247382" duration="286000" />
+      <workItem from="1701870546345" duration="1592000" />
+      <workItem from="1701872622425" duration="1532000" />
+      <workItem from="1701883031663" duration="10000" />
+      <workItem from="1701883152251" duration="11651000" />
+      <workItem from="1702130476592" duration="2280000" />
+      <workItem from="1702208646617" duration="2694000" />
+      <workItem from="1702219780643" duration="2052000" />
+      <workItem from="1702225291476" duration="309000" />
+      <workItem from="1702476719780" duration="9721000" />
     </task>
     <task id="LOCAL-00001" summary="BackEnd V1.0.0.10">
       <option name="closed" value="true" />
@@ -63,7 +96,55 @@
       <option name="project" value="LOCAL" />
       <updated>1701533729880</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="BackEnd V1.0.0.20">
+      <option name="closed" value="true" />
+      <created>1701894919930</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1701894919930</updated>
+    </task>
+    <task id="LOCAL-00003" summary="BackEnd V1.0.0.20">
+      <option name="closed" value="true" />
+      <created>1701894942795</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1701894942795</updated>
+    </task>
+    <task id="LOCAL-00004" summary="BackEnd V1.0.0.20">
+      <option name="closed" value="true" />
+      <created>1702211008357</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1702211008357</updated>
+    </task>
+    <task id="LOCAL-00005" summary="BackEnd V1.0.0.20">
+      <option name="closed" value="true" />
+      <created>1702211792392</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1702211792392</updated>
+    </task>
+    <task id="LOCAL-00006" summary="BackEnd V1.0.0.20">
+      <option name="closed" value="true" />
+      <created>1702222765941</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1702222765941</updated>
+    </task>
+    <task id="LOCAL-00007" summary="BackEnd V1.0.0.20">
+      <option name="closed" value="true" />
+      <created>1702480103186</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1702480103186</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -71,6 +152,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="BackEnd V1.0.0.10" />
-    <option name="LAST_COMMIT_MESSAGE" value="BackEnd V1.0.0.10" />
+    <MESSAGE value="BackEnd V1.0.0.20" />
+    <option name="LAST_COMMIT_MESSAGE" value="BackEnd V1.0.0.20" />
   </component>
 </project>

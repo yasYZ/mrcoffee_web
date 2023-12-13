@@ -169,65 +169,47 @@ ion-icon:hover {
     }
 }
 /* details start */
-.container{
-    width: 100%;
-}
 .row{
     width: 1300px;
+    height: 900px;
     margin: 0 auto;
 }
 .row .col{
-    display: inline-block;
-    margin-top: 80px;
+    margin-top: 150px;
     margin-right: 150px;
-    width: 300px;
+    width: 1000px;
     height: 650px;
-    background: url("../image/compngwingbadil_prev_ui.png") rgb(82, 53, 61);
-    border-radius: 0px 10px 10px 0px;
+    background: url("../image/IMG_20231202_153036_109.jpg");
+    border-radius: 10px;
+}
+.img{
+    width: 450px;
+    height: 450px;
+    margin-top: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
 }
 .item-name{
-    margin-top: -640px;
-    margin-right: 15px;
     font-family: font2;
     font-size: 22pt;
     color: white;
+    margin-right: 500px;
+    margin-top: -400px;
 }
 .item-discription{
-    margin-right: 15px;
     font-family: font1;
+    width: 50%;
     font-size: 16pt;
     color: white;
+    margin-right: 500px;
 }
-.col img{
-    position: absolute;
-    margin-right: 570px;
-    margin-top: -630px;
-    border-radius: 10px 10px 10px 10px;
-}
-.img-box{
-    height: 650px;
-    width: 340px;
-    background-color: #898989;
-    margin-right: 550px;
-    border-radius: 10px 0px 0px 10px;
-}
-.none {
-    margin-right: 300px;
-    margin-top: -650px;
-    width: 290px;
-    height: 650px;
-    background: linear-gradient(
-            to left,
-            #52353DFF,
-            #5d484e,
-            #6d6668,
-            #898989FF
-    );
+.sale-input{
+    margin-right: 10px;
+    font-family: font1;
+    font-size: 16pt;
 }
 .btn{
-    position: absolute;
-    top: 680px;
-    left: 800px;
+    margin-right: 558px;
     width: 400px;
     height: 70px;
     font-family: font1;
@@ -275,4 +257,72 @@ ion-icon:hover {
 .social-icons li i:hover {
     background: #fff;
     color: #000000;
+}
+.col ul{
+    margin-top: 80px;
+    margin-right: -500px;
+    text-align: center;
+    list-style: none;
+    color: #000000;
+    font-size: 14pt;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    transition: all .5s;
+}
+.col li a{
+    color: #fff1af;
+    transition: all .4s;
+    text-decoration: none;
+}
+.col ul:hover{
+    transform: scale(1.1);
+}
+.col figure input{
+    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+    width: 46%;
+    height: 60px;
+    float: left;
+    padding: 10px 30px;
+    margin: 8px 12px;
+    border-radius: 25px;
+}
+.i{
+    color: #fff1af;
+    margin-top: 5px;
+}
+/* footer */
+.footer {
+    background: var(--mainDark);
+    text-align: center;
+    height: 200px;
+    padding-top: 80px;
+}
+
+.social-icon {
+    color: var(--mainWhite);
+    font-size: 1.3rem;
+    margin-right: 1rem;
+    transition: var(--mainTransition);
+}
+.social-icon:hover {
+    color: var(--primaryColor);
+}
+.footer-text {
+    text-transform: uppercase;
+    color: var(--mainWhite);
+    letter-spacing: var(--letterSpacing);
+    margin-top: 1rem;
+    font-size: 0.85rem;
+}
+.footer a {
+    text-decoration: none;
+}
+.topic{
+    text-align: center;
+    font-family: 'poppins', sans-serif;
+    font-size: 30px;
+    color: #162938;
+}
+.text-primary{
+    color: #da2f2f;
 }
