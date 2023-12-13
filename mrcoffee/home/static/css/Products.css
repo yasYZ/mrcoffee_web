@@ -206,15 +206,18 @@ a{
 }
 .row .col{
     position: relative;
+    display: inline-block;
     background: url("../image/compngwingbadil_prev_ui.png");
     background-size: cover;
-    width: 100%;
-    max-width: 400px;
-    height: 420px;
+    inline-size: auto;
+    min-inline-size: 200px;
+    width: 300px;
+    margin-right: 10px;
+    margin-top: 10px;
+    height: 650px;
     border-radius: 10px;
     box-shadow: 0 15px 25px rgba(0, 0, 0, .2);
 	background-color: rgba(65, 33, 33, 0.7);
-    margin: 20px;
     overflow: hidden;
     transition: .5s;
 }
@@ -222,7 +225,9 @@ a{
     transform: scale(1.05);
 }
 .row{
-    width: 1300px;
+    width: auto;
+    min-width: 318px;
+    max-width: 1300px;
     margin: 0 auto;
 }
 .row .col figure{
