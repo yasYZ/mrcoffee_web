@@ -51,42 +51,21 @@
     <main class="main">
             <!-- Start items -->
 <section class="row">
-    <article class="col">
-        <div class="circle">
-            <img src="../static/image/SPRK_default_preset_name_custom_.png">
-        </div>
-        <div class="content-item">
-            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>
-            <a href="#">بیشتر بخوانید</a>
-        </div>
-    </article>
-    <article class="col">
-        <div class="circle">
-            <img src="../static/image/SPRK_default_preset_name_custom_.png">
-        </div>
-        <div class="content-item">
-            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>
-            <a href="#">بیشتر بخوانید</a>
-        </div>
-    </article>
-    <article class="col">
-        <div class="circle">
-            <img src="../static/image/SPRK_default_preset_name_custom_.png">
-        </div>
-        <div class="content-item">
-            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>
-            <a href="#">بیشتر بخوانید</a>
-        </div>
-    </article>
-    <article class="col">
-        <div class="circle">
-            <img src="../static/image/SPRK_default_preset_name_custom_.png">
-        </div>
-        <div class="content-item">
-            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>
-            <a href="#">بیشتر بخوانید</a>
-        </div>
-    </article>
+    {% for item in products %}
+        {% if item.is_special %}
+        <article class="col">
+            <div class="circle">
+                <img src="../../../{{ item.picture }}">
+            </div>
+            <div class="content-item">
+                <p>{{ item.name }}</p>
+                <p>{{ item.discription }}</p>
+                <p>{{ item.price }}T</p>
+                <a href="/product/{{ item.id }}">بیشتر بخوانید</a>
+            </div>
+        </article>
+        {% endif %}
+    {% endfor %}
     </section>
     <!-- end items -->
     </main>

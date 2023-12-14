@@ -40,6 +40,10 @@ body{
   --mainTransition: all 0.3s linear;
   --letterSpacing: 0.5rem;
 }
+.container-fluid{
+    width: 100%;
+    height: auto;
+}
 .nav{
     position: fixed;
     top: 0;
@@ -164,65 +168,26 @@ ion-icon:hover {
 
     }
 }
-/* products css */
-.sale {
-	position: absolute;
-    top: 6px;
-    left: 6px;
-	display: inline-block;
-	background: #be2d28;
-	color: white;
-	height: 2.5rem;
-	width: 2.5rem;
-	text-align: center;
-	vertical-align: middle;
-	line-height: 2.5rem;
-	transform: rotate(-20deg);
-	animation: beat 1s ease infinite alternate;
-	&:before,
-	&:after {
-		content:"";
-		position: absolute;
-		background: inherit;
-		height: inherit;
-		width: inherit;
-		top: 0;
-		left: 0;
-		z-index: -1;
-		transform: rotate(30deg);
-	}
-	&:after {
-		transform: rotate(60deg);
-	}
-}
-
-@keyframes beat {
-	from {	transform: rotate(-20deg) scale(1); }
-	to {	transform: rotate(-20deg) scale(1.1); }
-}
-a{
-    text-decoration: none;
-    color: white;
+/* cart start */
+.input{
+    border: none;
+    border-radius: 10px;
+    background-color: #727272;
+    width: 70px;
+    height: 30px;
+    margin-right: 105px;
 }
 .row .col{
-    position: relative;
     display: inline-block;
-    background: url("../image/compngwingbadil_prev_ui.png");
-    background-size: cover;
-    inline-size: auto;
-    min-inline-size: 200px;
-    width: 300px;
-    margin-right: 10px;
-    margin-top: 10px;
-    height: 650px;
     border-radius: 10px;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, .2);
-	background-color: rgba(65, 33, 33, 0.7);
-    overflow: hidden;
-    transition: .5s;
+    margin-top: 130px;
+    width: 250px;
+    height: 300px;
+    background-color: #7d7d7d;
+    transition: .4s;
 }
-.row .col:hover{
-    transform: scale(1.05);
+.col:hover{
+    transform: scale(1.1);
 }
 .row{
     width: auto;
@@ -230,78 +195,78 @@ a{
     max-width: 1300px;
     margin: 0 auto;
 }
-.row .col figure{
-    text-align: center;
-}
-.row .col .btn {
-    position: relative;
-    display: inline-block;
-    background: linear-gradient(
-        to left,
-        #800606,
-        #da0d0d,
-        #800606
-    );
-    color: #ffffff;
-    padding: 10px 20px;
-    border-radius: 40px;
-    margin-top: 20px;
-    margin-right: 90px;
-    text-decoration: none;
-    transition: all 0.5s;
-}
-.col a:hover{
-    transform: scale(1.1);
-}
-.col img{
-    transform: scale(0.9);
-    border-radius: 20px;
+.img{
+    border-radius: 100px;
+    margin-top: 10px;
+    margin-right: 50px;
+    width: 150px;
+    height: 150px;
 }
 .item-name{
-    color: white;
     font-family: font2;
-    font-size: 15pt;
-}
-.col .discription{
-    color: white;
-    margin: 5px 0px 20px 0px;
     text-align: center;
+    font-size: 16pt;
 }
-.special h2{
-    color: white;
-    text-shadow:
-        2px 2px 20px #000000,2px 2px 20px #000000;
-    margin-top: 150px;
-    text-align: center;
-    font-size: 40pt;
+.price{
     font-family: font1;
+    margin-right: 90px;
+    font-size: 13pt;
 }
-.Normal h2{
-    color: white;
-    text-shadow:
-        2px 2px 20px #000000,2px 2px 20px #000000;
-    margin-top: 150px;
+.price-sale{
+    font-family: font1;
     text-align: center;
-    font-size: 40pt;
-    font-family: font2;
+    font-size: 13pt;
 }
-figure .price{
-    color: white;
-    padding-bottom: 20px;
-    font-size: 14pt;
-}
-.line{
-    height: 0.5rem;
-    margin-top: 50px;
-    background: linear-gradient(
-        to left,
-        var(--primaryColor),
-        var(--secondaryColor),
-        var(--primaryColor)
-    );
-}
-/* product details */
 
+.btn button{
+    position: absolute;
+    top: 800px;
+    left: 70px;
+    width: 350px;
+    height: 100px;
+    font-family: font2;
+    font-size: 20pt;
+    background-color: darkred;
+    color: white;
+    border-radius: 40px;
+    border: none;
+    transition:all 0.5s;
+}
+.btn button:hover{
+    transform: scale(1.1);
+}
+.side{
+    border: none;
+    border-radius: 0px 130px 130px 0px;
+    margin-right: 1364px;
+    margin-top: -390px;
+    width: 500px;
+    height: 850px;
+    background: url("../image/SPRK_default_preset_name_custom – 1.png");
+    background-size: cover;
+}
+.side h2{
+    color: white;
+    margin-top: 10px;
+    text-align: center;
+    font-family: font2;
+    font-size: 22pt;
+}
+.products{
+    color: white;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 16pt;
+    font-family: font1;
+    transition: 0.5s;
+}
+.products a{
+    text-decoration: none;
+    color: white;
+}
+.products:hover{
+    transform: scale(1.1);
+}
 /* footer */
 .footer {
     background: var(--mainDark);
@@ -309,7 +274,6 @@ figure .price{
     height: 200px;
     padding-top: 80px;
 }
-
 .social-icon {
     color: var(--mainWhite);
     font-size: 1.3rem;

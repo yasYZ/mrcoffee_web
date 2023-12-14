@@ -208,6 +208,11 @@ ion-icon:hover {
     font-family: font1;
     font-size: 16pt;
 }
+figure .price{
+    font-size: 16pt;
+    padding-right: 710px;
+    color: #fff1af;
+}
 .btn{
     margin-right: 558px;
     width: 400px;
@@ -259,7 +264,7 @@ ion-icon:hover {
     color: #000000;
 }
 .col ul{
-    margin-top: 80px;
+    margin-top: 30px;
     margin-right: -500px;
     text-align: center;
     list-style: none;
@@ -270,6 +275,7 @@ ion-icon:hover {
     transition: all .5s;
 }
 .col li a{
+    margin-top: 120px;
     color: #fff1af;
     transition: all .4s;
     text-decoration: none;
@@ -287,8 +293,8 @@ ion-icon:hover {
     border-radius: 25px;
 }
 .i{
+    margin-top: -60px;
     color: #fff1af;
-    margin-top: 5px;
 }
 /* footer */
 .footer {

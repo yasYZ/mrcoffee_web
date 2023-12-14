@@ -41,20 +41,56 @@
     </nav>
         <section class="row">
             {% for item in details %}
-            <article class="col">
-                <figure>
-                    <img class="img" src="../../{{ item.picture }}">
-                    <figcaption class="item-name">{{ item.name }}</figcaption>
-                    <figcaption class="item-discription">{{ item.discription }}</figcaption>
-                    <input class="sale-input" type="number" placeholder=" مقدار : {{ item.category }}">
-                </figure>
-                <a href="#"><button class="btn">افزودن به سبد خرید</button></a>
-                <ul>
-                    <li><a href="#"><ion-icon class="i" name="send-outline"></ion-icon>ارسال رایگان توسط مستر کافی</a></li>
-                    <li><a href="#"><ion-icon class="i" name="shield-checkmark-outline"></ion-icon>خریدی امن با مستر کافی</a></li>
-                    <li><a href="#"><ion-icon class="i" name="happy-outline"></ion-icon>بیش از 2000 رضایت از مشتری</a></li>
-                </ul>
-            </article>
+                {% if item.is_sale%}
+                <article class="col">
+                    <figure>
+                        <img class="img" src="../../{{ item.picture }}">
+                        <figcaption class="item-name">{{ item.name }}</figcaption>
+                        <figcaption class="item-discription">{{ item.discription }}</figcaption>
+                        <del class="price">{{ item.price }}T</del>
+                        {% if item.is_exists %}
+                            {% if item.price > 0 %}
+                                <p class="price">{{ item.sale_price }}T</p>
+                            {% elif item.price == 0%}
+                                <p class="price">رایگان</p>
+                            {% endif %}
+                        {% else %}
+                            <p class="price">ناموحود</p>
+                        {% endif %}
+                        <input class="sale-input" type="number" placeholder=" مقدار : {{ item.category }}">
+                    </figure>
+                    <a href="#"><button class="btn">افزودن به سبد خرید</button></a>
+                    <ul>
+                        <li><a href="#"><ion-icon class="i" name="send-outline"></ion-icon>ارسال رایگان توسط مستر کافی</a></li>
+                        <li><a href="#"><ion-icon class="i" name="shield-checkmark-outline"></ion-icon>خریدی امن با مستر کافی</a></li>
+                        <li><a href="#"><ion-icon class="i" name="happy-outline"></ion-icon>بیش از 2000 رضایت از مشتری</a></li>
+                    </ul>
+                </article>
+                {% else %}
+                    <article class="col">
+                    <figure>
+                        <img class="img" src="../../{{ item.picture }}">
+                        <figcaption class="item-name">{{ item.name }}</figcaption>
+                        <figcaption class="item-discription">{{ item.discription }}</figcaption>
+                        {% if item.is_exists %}
+                            {% if item.price > 0 %}
+                                <p class="price">{{ item.price }}T</p>
+                            {% elif item.price == 0 %}
+                                <p class="price">رایگان</p>
+                            {% endif %}
+                        {% else %}
+                            <p class="price">ناموحود</p>
+                        {% endif %}
+                        <input class="sale-input" type="number" placeholder=" مقدار : {{ item.category }}">
+                    </figure>
+                    <a href="#"><button class="btn">افزودن به سبد خرید</button></a>
+                    <ul>
+                        <li><a href="#"><ion-icon class="i" name="send-outline"></ion-icon>ارسال رایگان توسط مستر کافی</a></li>
+                        <li><a href="#"><ion-icon class="i" name="shield-checkmark-outline"></ion-icon>خریدی امن با مستر کافی</a></li>
+                        <li><a href="#"><ion-icon class="i" name="happy-outline"></ion-icon>بیش از 2000 رضایت از مشتری</a></li>
+                    </ul>
+                </article>
+                {% endif %}
             {% endfor %}
         </section>
         <footer class="footer">

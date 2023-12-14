@@ -1,10 +1,91 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | محصولات</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="../static/css/Cart.css">
 </head>
 <body>
-
+    <nav class="nav">
+            <div class="menu">
+            <label for="chk1">
+                <ion-icon class="menu-btn" name="grid"></ion-icon>
+            </label>
+        </div>
+        <div class="logo"><h1>Mr.Coffee</h1></div>
+        <div class="search-box">
+            <form>
+                <label>
+                    <input type ="text" name ="search" id ="srch" placeholder="جست و جو">
+                </label>
+                <button type ="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <ul>
+            <li><a href="/home">خانه</a></li>
+            <li><a href="/products">محصولات</a></li>
+            <li><a href="/about-us">درباره ما</a></li>
+            <li>
+                {% if user.is_authenticated %}
+                <a href="/logout"><ion-icon name="log-out"></ion-icon></a>
+                {% else %}
+                <a href="/login-signup"><ion-icon name="log-in"></ion-icon></a>
+                {% endif %}
+                <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                <a href="/cart"><ion-icon name="cart"></ion-icon></a>
+            </li>
+        </ul>
+    </nav>
+    <section class="row">
+        <article class="col">
+            <figure>
+                <img class="img" src="../static/image/SPRK_default_preset_name_custom_.png">
+                <figcaption class="item-name">item name</figcaption>
+                <del class="price">100,000T</del>
+                <p class="price-sale">80,000T</p>
+                <a class="input">تعداد:0</a>
+            </figure>
+        </article>
+    </section>
+    <aside class="side">
+        <h2>محصولات:</h2>
+        <div class="products">
+            <a href="#">x1 قهوه: 100.000T</a>
+        </div>
+        <a class="btn" href="#"><button>پرداخت</button></a>
+    </aside>
+    <footer class="footer">
+        <div class="section-center">
+            <div class="social-icons">
+            <!-- social icon -->
+            <a href="#" class="social-icon">
+            <ion-icon name="navigate"></ion-icon>
+            </a>
+            <!-- end of social icon -->
+            <!-- social icon -->
+            <a href="#" class="social-icon">
+            <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+            <!-- end of social icon -->
+            <!-- social icon -->
+            <a href="#" class="social-icon">
+                <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+            <!-- end of social icon -->
+        </div>
+        <p class="footer-text">
+            .&copy;2023 <span class="text-primary">MR.Coffee</span>
+            all right reserved by Topop
+        </p>
+        </div>
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

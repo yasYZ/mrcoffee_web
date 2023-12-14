@@ -24,8 +24,8 @@ class Product(models.Model):
     discription = models.TextField(max_length=200)
     price = models.DecimalField(default=0, max_digits=100, decimal_places=0)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, default=1)
-    is_special = models.BooleanField(default=False)
     is_sale = models.BooleanField(default=False)
+    is_special = models.BooleanField(default=False)
     is_exists = models.BooleanField(default=True)
     sale_price = models.DecimalField(default=0, max_digits=100, decimal_places=0)
     picture = models.ImageField(upload_to='static/image/')
@@ -44,3 +44,8 @@ class Order(models.Model):
 
     def __str__(self):
         return self.product
+
+
+class CartProduct(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    number = models.IntegerField(default=1)
