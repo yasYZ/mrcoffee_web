@@ -194,7 +194,6 @@ ion-icon:hover {
     width: auto;
     min-width: 300px;
     max-width: 1000px;
-    height: 900px;
 }
 .img{
     border-radius: 100px;
@@ -237,7 +236,7 @@ ion-icon:hover {
 }
 .side{
     float: left;
-    margin-top: -900px;
+    margin-top: -430px;
     border: none;
     border-radius: 0% 20% 20% 0%;
     width: 500px;
@@ -282,7 +281,7 @@ ion-icon:hover {
     .side {
         margin-top: 50px;
         border: none;
-        border-radius: 10px;
+        border-radius: 25px;
         width: auto;
         max-width: 810px;
         min-width: 360px;
@@ -293,7 +292,7 @@ ion-icon:hover {
     }
     .btn button{
     position: absolute;
-    top: 1740px;
+    top: 1270px;
     left: 5px;
     width: 350px;
     height: 100px;
