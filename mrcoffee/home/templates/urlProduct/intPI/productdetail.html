@@ -78,12 +78,12 @@
                             {% elif item.price == 0 %}
                                 <p class="price">رایگان</p>
                             {% endif %}
+                            <input class="sale-input" type="number" placeholder=" مقدار : {{ item.category }}">
+                            <a href="#"><button class="btn">افزودن به سبد خرید</button></a>
                         {% else %}
                             <p class="price">ناموجود</p>
                         {% endif %}
-                        <input class="sale-input" type="number" placeholder=" مقدار : {{ item.category }}">
                     </figure>
-                    <a href="#"><button class="btn">افزودن به سبد خرید</button></a>
                     <ul>
                         <li><a href="#"><ion-icon class="i" name="send-outline"></ion-icon>ارسال رایگان توسط مستر کافی</a></li>
                         <li><a href="#"><ion-icon class="i" name="shield-checkmark-outline"></ion-icon>خریدی امن با مستر کافی</a></li>
