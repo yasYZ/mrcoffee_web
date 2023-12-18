@@ -217,7 +217,7 @@ a{
     height: 650px;
     border-radius: 10px;
     box-shadow: 0 15px 25px rgba(0, 0, 0, .2);
-	background-color: rgba(65, 33, 33, 0.7);
+    background-color: rgba(65, 33, 33, 0.7);
     overflow: hidden;
     transition: .5s;
 }
@@ -226,7 +226,7 @@ a{
 }
 .row{
     width: auto;
-    min-width: 318px;
+    min-width: 360px;
     max-width: 1300px;
     margin: 0 auto;
 }
