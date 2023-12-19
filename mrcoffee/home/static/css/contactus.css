@@ -309,8 +309,6 @@ form{
 .submit-button:hover{
     background: #3d252c;
 }
-
-
 /* Responsive css */
 
 @media only screen and (max-width: 767px) {
@@ -341,17 +339,4 @@ form{
     .submit-button{
         margin: 10px 0px;
     }
-}
-/* about us */
-*{
-
-}
-.main-circle{
-    margin-right: 1300px;
-    margin-top: 15px;
-    height: 1000px;
-    width: 1000px;
-    background-color: #bbb;
-    border-radius: 50%;
-    background-size: cover;
 }

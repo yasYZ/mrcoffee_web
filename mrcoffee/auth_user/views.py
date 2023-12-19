@@ -51,7 +51,7 @@ def reset_password(request, uidb64, token):
             return redirect('/home')
         else:
             messages.error(request, "Your password doesnt match")
-    return render(request, 'ResetPass.html', context)
+    return render(request, 'urlProduct/intPI/ResetPass.html', context)
 
 
 def forgot_password(request):
@@ -61,7 +61,7 @@ def forgot_password(request):
             user = User.objects.get(email=email)
             uidb64 = user.id
             token = default_token_generator.make_token(user)
-            reset_link = request.build_absolute_uri(f'/ResetPassword/{uidb64}/{token}/')
+            reset_link = request.build_absolute_uri(f'/reset-password/{uidb64}/{token}/')
             message = f"""
                 ______________________________
                 intPI
