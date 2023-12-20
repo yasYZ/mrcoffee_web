@@ -170,13 +170,14 @@ ion-icon:hover {
 }
 /* details start */
 .row{
-    width: 1300px;
+    padding: 150px;
+    width: auto;
+    min-width: 200px;
+    max-width: 1300px;
     height: 900px;
     margin: 0 auto;
 }
 .row .col{
-    margin-top: 150px;
-    margin-right: 150px;
     width: 1000px;
     height: 650px;
     background: url("../image/IMG_20231202_153036_109.jpg");
@@ -274,8 +275,7 @@ figure .price{
     padding: 10px 15px;
     transition: all .5s;
 }
-.col li a{
-    margin-top: 120px;
+.col li p{
     color: #fff1af;
     transition: all .4s;
     text-decoration: none;
@@ -296,8 +296,159 @@ figure .price{
     margin-top: -60px;
     color: #fff1af;
 }
+@media screen and (max-width: 1230px) {
+    .row .col {
+        position: relative;
+        margin: 0;
+        width: auto;
+        max-width: 1000px;
+        min-width: 200px;
+        height: 800px;
+        background: url("../image/IMG_20231202_153036_109.jpg");
+        border-radius: 10px;
+    }
+    .center{
+        text-align: center;
+    }
+    .img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 200px;
+        height: 200px;
+        margin-top: 20px;
+        border-radius: 10px;
+    }
+    .item-name{
+        margin: 0;
+        text-align: center;
+        font-family: font2;
+        font-size: 22pt;
+        color: white;
+    }
+    .item-discription{
+        margin: 0;
+        text-align: center;
+        font-family: font1;
+        width: 100%;
+        font-size: 16pt;
+        color: white;
+    }
+    .sale-input{
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        font-family: font1;
+        font-size: 16pt;
+    }
+    figure .price{
+        text-align: center;
+        font-size: 16pt;
+        padding: 0;
+        color: #fff1af;
+    }
+    .btn-center{
+        text-align: center;
+    }
+    .btn{
+        margin: 0;
+        width: 70%;
+        text-align: center;
+        height: 70px;
+        font-family: font1;
+        font-size: 20pt;
+        color: white;
+        background-color: #2F1B0EFF;
+        border-radius: 20px;
+        border: none;
+        transition:all 0.5s;
+        }
+        .btn:hover{
+            background-color: #4b220a;
+            color: white;
+            transform: scale(1.1);
+        }
+        #carry{
+            position: absolute;
+            margin-top: 100px;
+            margin-right: 620px;
+        }
+        .col a{
+            color: white;
+        }
+        .col i{
+            color: white;
+        }
+        .social-icons {
+            list-style: none;
+            text-align: center;
+            margin: 20px 0px;
+        }
+        .social-icons li {
+            display: inline-block;
+        }
+    .social-icons li i {
+        background: #52353d;
+        color: #fff;
+        padding: 15px;
+        font-size: 20px;
+        border-radius: 22%;
+        margin: 0px 5px;
+        cursor: pointer;
+        transition: all .5s;
+    }
+    .social-icons li i:hover {
+        background: #fff;
+        color: #000000;
+    }
+    .col ul{
+        margin: 0;
+        text-align: center;
+        list-style: none;
+        color: #000000;
+        font-size: 14pt;
+        text-transform: uppercase;
+        padding: 10px 15px;
+        transition: all .5s;
+    }
+    .col li p{
+        margin: 0;
+        text-align: center;
+        color: #fff1af;
+        transition: all .4s;
+        text-decoration: none;
+    }
+    .col ul:hover{
+        transform: scale(1.1);
+    }
+    .col figure input{
+        box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+        width: 100%;
+        height: 60px;
+        float: left;
+        padding: 10px 30px;
+        margin: 8px 12px;
+        border-radius: 25px;
+    }
+    .i{
+        text-align: center;
+        color: #fff1af;
+    }
+}
+@media screen and (max-width: 615px){
+    .row{
+        margin: 0;
+        padding: 0;
+        padding-top: 40px;
+        width: auto;
+        min-width: 200px;
+        max-width: 1300px;
+        height: 900px;
+}
+}
 /* footer */
 .footer {
+    margin-top: 200px;
     background: var(--mainDark);
     text-align: center;
     height: 200px;

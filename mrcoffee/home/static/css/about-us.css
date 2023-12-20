@@ -217,11 +217,11 @@ body{
 .row{
     width: auto;
     min-width: 360px;
-    max-width: 1300px;
+    max-width: 1500px;
     margin: 0 auto;
 }
 h2{
-    margin-top: 100px;
+    margin-top: -80px;
     font-family: font2;
     font-size: 24pt;
     text-align: center;
@@ -233,10 +233,10 @@ h2{
     background-size: cover;
     inline-size: auto;
     min-inline-size: 200px;
-    width: 300px;
+    width: 350px;
     margin-right: 10px;
     margin-top: 10px;
-    height: 300px;
+    height: 350px;
     border-radius: 10px;
     box-shadow: 0 15px 25px rgba(0, 0, 0, .2);
     background-color: rgba(81, 81, 81, 0.7);
@@ -265,4 +265,44 @@ h2{
 .col figure a:hover{
     color: #ff8a32;
     transform: scale(1.072);
+}
+.row .col-2{
+    position: relative;
+    display: inline-block;
+    background: url("../image/compngwingbadil_prev_ui.png");
+    background-size: cover;
+    inline-size: auto;
+    min-inline-size: 200px;
+    width: auto;
+    max-width: 1445px;
+    min-width: 340px;
+    margin-right: 10px;
+    margin-top: 10px;
+    height: auto;
+    min-height: 350px;
+    max-height: 1500px;
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .2);
+    background-color: rgba(81, 81, 81, 0.7);
+    overflow: hidden;
+    transition: .5s;
+}
+.row .col-2:hover{
+    transform: scale(1.1);
+    color: #7d7d7d;
+}
+.row .col-2 figure{
+    text-align: center;
+    color: white;
+    font-size: 20pt;
+}
+.col-2 figure a{
+    text-decoration: none;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+.col-2 figure a:hover{
+    color: #ff8a32;
+    transform: scale(1.0072);
 }

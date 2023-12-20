@@ -7,6 +7,7 @@
     <title>Mr.Coffee | مستر کافی</title>
     <link rel="stylesheet" href="../../../static/css/details.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav class="nav">
@@ -34,7 +35,7 @@
                 {% else %}
                 <a href="/loginSignup"><ion-icon name="log-in"></ion-icon></a>
                 {% endif %}
-                <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                <a href="https://www.instagram.com/mr.coffee.choc/" target="_blank" rel="noopener noreferrer"><ion-icon name="logo-instagram"></ion-icon></a>
                 <a href="/cart"><ion-icon name="cart"></ion-icon></a>
             </li>
         </ul>
@@ -47,7 +48,7 @@
                         <img class="img" src="../../{{ item.picture }}">
                         <figcaption class="item-name">{{ item.name }}</figcaption>
                         <figcaption class="item-discription">{{ item.discription }}</figcaption>
-                        <del class="price">{{ item.price }}T</del>
+                        <p class="price"><del>{{ item.price }}T</del></p>
                         {% if item.is_exists %}
                             {% if item.price > 0 %}
                                 <p class="price">{{ item.sale_price }}T</p>
@@ -57,13 +58,15 @@
                         {% else %}
                             <p class="price">ناموجود</p>
                         {% endif %}
-                        <input class="sale-input" type="number" placeholder=" مقدار : {{ item.category }}">
+                        <div class="center"><input class="sale-input" type="number" placeholder=" مقدار : {{ item.category }}"></div>
                     </figure>
-                    <a href="#"><button class="btn">افزودن به سبد خرید</button></a>
+                    <div class="btn-center">
+                        <a><button class="btn" value="{{ item.id }}" id="add-cart">افزودن به سبد خرید</button></a>
+                    </div>
                     <ul>
-                        <li><a href="#"><ion-icon class="i" name="send-outline"></ion-icon>ارسال رایگان توسط مستر کافی</a></li>
-                        <li><a href="#"><ion-icon class="i" name="shield-checkmark-outline"></ion-icon>خریدی امن با مستر کافی</a></li>
-                        <li><a href="#"><ion-icon class="i" name="happy-outline"></ion-icon>بیش از 2000 رضایت از مشتری</a></li>
+                        <li><p href="#"><ion-icon class="i" name="send-outline"></ion-icon>ارسال رایگان توسط مستر کافی</p></li>
+                        <li><p href="#"><ion-icon class="i" name="shield-checkmark-outline"></ion-icon>خریدی امن با مستر کافی</p></li>
+                        <li><p href="#"><ion-icon class="i" name="happy-outline"></ion-icon>بیش از 2000 رضایت از مشتری</p></li>
                     </ul>
                 </article>
                 {% else %}
@@ -79,7 +82,7 @@
                                 <p class="price">رایگان</p>
                             {% endif %}
                             <input class="sale-input" type="number" placeholder=" مقدار : {{ item.category }}">
-                            <a href="#"><button class="btn">افزودن به سبد خرید</button></a>
+                            <a><button class="btn" value="{{ item.id }}" id="add-cart">افزودن به سبد خرید</button></a>
                         {% else %}
                             <p class="price">ناموجود</p>
                         {% endif %}
@@ -118,6 +121,24 @@
         </p>
         </div>
     </footer>
+    <script>
+        $(document).on('click', '#add-cart', function (e){
+            e.preventDefault();
+            $.ajax({
+                type : 'POST',
+                url :'{% url 'cart_add' %}',
+                data: {
+                    product_id : $('#add-cart').val(),
+                    csrfmiddlewaretoken: '{{ csrf_token }}',
+                    action : 'post'},
+                success: function (json){
+                    console.log(json)
+                },
+                error: function(xhr, errmsg, err){
+                }
+            })
+        })
+    </script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
