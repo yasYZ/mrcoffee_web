@@ -43,3 +43,7 @@ def cart_del(request):
 
 def cart_up(request):
     return render(request, 'cart.html')
+
+
+def cart_conf(request):
+    return render(request, 'urlProduct/intPI/productSoldConfirm.html')

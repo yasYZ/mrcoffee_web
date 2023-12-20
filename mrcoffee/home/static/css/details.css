@@ -265,9 +265,10 @@ figure .price{
     color: #000000;
 }
 .col ul{
-    margin-top: 30px;
-    margin-right: -500px;
-    text-align: center;
+    width: 300px;
+    margin-top: 50px;
+    margin-right: 20px;
+    text-align: justify;
     list-style: none;
     color: #000000;
     font-size: 14pt;
@@ -308,6 +309,7 @@ figure .price{
         border-radius: 10px;
     }
     .center{
+        margin: 0;
         text-align: center;
     }
     .img{
@@ -335,9 +337,9 @@ figure .price{
         color: white;
     }
     .sale-input{
+        margin: 0;
         width: 100%;
         text-align: center;
-        margin: 0;
         font-family: font1;
         font-size: 16pt;
     }
@@ -353,7 +355,7 @@ figure .price{
     .btn{
         margin: 0;
         width: 70%;
-        text-align: center;
+        text-align: justify;
         height: 70px;
         font-family: font1;
         font-size: 20pt;
@@ -363,30 +365,30 @@ figure .price{
         border: none;
         transition:all 0.5s;
         }
-        .btn:hover{
-            background-color: #4b220a;
-            color: white;
-            transform: scale(1.1);
+    .btn:hover{
+        background-color: #4b220a;
+        color: white;
+        transform: scale(1.1);
+    }
+    #carry{
+        position: absolute;
+        margin-top: 100px;
+        margin-right: 620px;
+    }
+    .col a{
+        color: white;
+    }
+    .col i{
+        color: white;
+    }
+    .social-icons {
+        list-style: none;
+        text-align: center;
+        margin: 20px 0px;
         }
-        #carry{
-            position: absolute;
-            margin-top: 100px;
-            margin-right: 620px;
-        }
-        .col a{
-            color: white;
-        }
-        .col i{
-            color: white;
-        }
-        .social-icons {
-            list-style: none;
-            text-align: center;
-            margin: 20px 0px;
-        }
-        .social-icons li {
-            display: inline-block;
-        }
+    .social-icons li {
+        display: inline-block;
+    }
     .social-icons li i {
         background: #52353d;
         color: #fff;
@@ -402,7 +404,9 @@ figure .price{
         color: #000000;
     }
     .col ul{
-        margin: 0;
+        width: 300px;
+        margin-top: 50px;
+        margin-right: 20px;
         text-align: center;
         list-style: none;
         color: #000000;
@@ -427,7 +431,7 @@ figure .price{
         height: 60px;
         float: left;
         padding: 10px 30px;
-        margin: 8px 12px;
+        margin: 0;
         border-radius: 25px;
     }
     .i{

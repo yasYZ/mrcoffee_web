@@ -55,19 +55,19 @@
                             {% elif item.price == 0%}
                                 <p class="price">رایگان</p>
                             {% endif %}
+                                <div class="center"><input class="sale-input" type="number" placeholder=" مقدار : {{ item.category }}"></div>
                         {% else %}
                             <p class="price">ناموجود</p>
                         {% endif %}
-                        <div class="center"><input class="sale-input" type="number" placeholder=" مقدار : {{ item.category }}"></div>
+                        <div class="btn-center">
+                            <a><button class="btn" value="{{ item.id }}" id="add-cart">افزودن به سبد خرید</button></a>
+                        </div>
+                        <ul>
+                            <li><p href="#"><ion-icon class="i" name="send-outline"></ion-icon>ارسال رایگان توسط مستر کافی</p></li>
+                            <li><p href="#"><ion-icon class="i" name="shield-checkmark-outline"></ion-icon>خریدی امن با مستر کافی</p></li>
+                            <li><p href="#"><ion-icon class="i" name="happy-outline"></ion-icon>بیش از 2000 رضایت از مشتری</p></li>
+                        </ul>
                     </figure>
-                    <div class="btn-center">
-                        <a><button class="btn" value="{{ item.id }}" id="add-cart">افزودن به سبد خرید</button></a>
-                    </div>
-                    <ul>
-                        <li><p href="#"><ion-icon class="i" name="send-outline"></ion-icon>ارسال رایگان توسط مستر کافی</p></li>
-                        <li><p href="#"><ion-icon class="i" name="shield-checkmark-outline"></ion-icon>خریدی امن با مستر کافی</p></li>
-                        <li><p href="#"><ion-icon class="i" name="happy-outline"></ion-icon>بیش از 2000 رضایت از مشتری</p></li>
-                    </ul>
                 </article>
                 {% else %}
                     <article class="col">
@@ -81,17 +81,19 @@
                             {% elif item.price == 0 %}
                                 <p class="price">رایگان</p>
                             {% endif %}
-                            <input class="sale-input" type="number" placeholder=" مقدار : {{ item.category }}">
-                            <a><button class="btn" value="{{ item.id }}" id="add-cart">افزودن به سبد خرید</button></a>
+                                <input class="sale-input" type="number" placeholder=" مقدار : {{ item.category }}">
                         {% else %}
                             <p class="price">ناموجود</p>
                         {% endif %}
+                        <div class="btn-center">
+                            <a><button class="btn" value="{{ item.id }}" id="add-cart">افزودن به سبد خرید</button></a>
+                        </div>
+                        <ul>
+                            <li><a href="#"><ion-icon class="i" name="send-outline"></ion-icon>ارسال رایگان توسط مستر کافی</a></li>
+                            <li><a href="#"><ion-icon class="i" name="shield-checkmark-outline"></ion-icon>خریدی امن با مستر کافی</a></li>
+                            <li><a href="#"><ion-icon class="i" name="happy-outline"></ion-icon>بیش از 2000 رضایت از مشتری</a></li>
+                        </ul>
                     </figure>
-                    <ul>
-                        <li><a href="#"><ion-icon class="i" name="send-outline"></ion-icon>ارسال رایگان توسط مستر کافی</a></li>
-                        <li><a href="#"><ion-icon class="i" name="shield-checkmark-outline"></ion-icon>خریدی امن با مستر کافی</a></li>
-                        <li><a href="#"><ion-icon class="i" name="happy-outline"></ion-icon>بیش از 2000 رضایت از مشتری</a></li>
-                    </ul>
                 </article>
                 {% endif %}
             {% endfor %}
