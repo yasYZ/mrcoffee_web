@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .cart import Cart
-from .models import Product
+from .models import Product, Order, CartProduct
 from django.http import JsonResponse
 
 # Create your views here.
@@ -22,7 +22,8 @@ def product_detail(request, pi):
 
 
 def cart(request):
-    return render(request, 'cart.html')
+    product = CartProduct
+    return render(request, 'cart.html', {'products': product})
 
 
 def cart_add(request):
@@ -46,4 +47,12 @@ def cart_up(request):
 
 
 def cart_conf(request):
+    form = Order
+
+    if request.method == 'POST':
+        form = Order(request.POST)
+        if form.is_valid():
+            form.save()
+            redirect('home')
+    context = {'form': form}
     return render(request, 'urlProduct/intPI/productSoldConfirm.html')

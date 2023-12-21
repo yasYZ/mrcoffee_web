@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>پرداخت | مستر کافی</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../../static/css/sold.css">
+    <link rel="stylesheet" href="../static/css/sold.css">
 </head>
 <body>
     {% if messages %}
@@ -58,7 +58,7 @@
                     <p>لورم</p>
                     <div class="w-line"></div>
                 </figcaption>
-                <p class="sum">مجموع :</p>
+                <p>مجموع :</p>
                 <div class="line"></div>
                 <div class="tab">
                     <button class="tablinks" onclick="openCity(event, 'present')">پرداخت درب منزل</button>
@@ -70,6 +70,7 @@
                         <input type="text" class="address" name="address" placeholder="آدرس محل تحویل : تهران-ستارخان-..." required>
                         <input type="email" class="address" name="address" placeholder="ایمیل : youremail@example.com" required>
                         <input type="number" class="address" name="address" placeholder="شماره تلفن : 91212345678" required>
+
                         <p><button type="submit" class="btn">سفارش</button></p>
                     </form>
                 </div>
@@ -131,7 +132,5 @@
             }
         }
     </script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
