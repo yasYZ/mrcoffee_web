@@ -8,12 +8,19 @@ class Cart:
 
         self.cart = cart
 
-    def add(self, product):
+    def add(self, product, amount):
         product_id = str(product.id)
 
         if product_id in self.cart:
             pass
         else:
-            self.cart[product_id] = {'price': str(product.price)}
-
+            self.cart[product_id] = {'price': str(product.price), 'name': str(product.name), 'picture':  str(product.picture), 'sale_price': str(product.sale_price), 'category': str(product.category), 'sale': product.is_sale, 'amount': str(amount)}
         self.session.modified = True
+
+    def delete(self, product, amount):
+        product_id = str(product.id)
+
+        if product_id in self.cart:
+            self.cart.pop({'price': str(product.price), 'name': str(product.name), 'picture': str(product.picture),
+                           'sale_price': str(product.sale_price), 'category': str(product.category),
+                           'sale': product.is_sale, 'amount': str(amount)})

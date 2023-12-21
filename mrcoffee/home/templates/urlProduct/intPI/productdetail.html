@@ -55,7 +55,7 @@
                             {% elif item.price == 0%}
                                 <p class="price">رایگان</p>
                             {% endif %}
-                                <div class="center"><input class="sale-input" type="number" placeholder=" مقدار : {{ item.category }}" required></div>
+                                <input class="sale-input" id="input-amount" type="number" placeholder="چند {{item.category}} میخوای؟ پیش فرض 1 {{ item.category}}" required>
                                 <div class="btn-center">
                                     <a><button class="btn" value="{{ item.id }}" id="add-cart">افزودن به سبد خرید</button></a>
                                 </div>
@@ -81,7 +81,7 @@
                             {% elif item.price == 0 %}
                                 <p class="price">رایگان</p>
                             {% endif %}
-                                <input class="sale-input" type="number" placeholder=" مقدار : {{ item.category }}" required>
+                                <input class="sale-input" id="input-amount" type="number" placeholder="چند {{ item.category }} میخوای؟ پیش فرض 1" required>
                             <div class="btn-center">
                                 <a><button class="btn" value="{{ item.id }}" id="add-cart" type="submit">افزودن به سبد خرید</button></a>
                             </div>
@@ -131,6 +131,7 @@
                 url :'{% url 'cart_add' %}',
                 data: {
                     product_id : $('#add-cart').val(),
+                    amount : $('#input-amount').val(),
                     csrfmiddlewaretoken: '{{ csrf_token }}',
                     action : 'post'},
                 success: function (json){

@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .cart import Cart
-from .models import Product, Order, CartProduct
+from .models import Product, Order
 from django.http import JsonResponse
+from .context_processors import cart
 
 # Create your views here.
 
@@ -21,25 +22,30 @@ def product_detail(request, pi):
     return render(request, 'urlProduct/intPI/productdetail.html', {'details': product})
 
 
-def cart(request):
-    product = CartProduct
-    return render(request, 'cart.html', {'products': product})
+def __cart__(request):
+    cart = Cart(request).cart
+    print({'products': cart})
+    return render(request, 'cart.html', {'products': cart})
 
 
 def cart_add(request):
     cart = Cart(request)
 
     if request.POST.get('action') == 'post':
-        product_id = int(request.POST.get('product_id'))
+        product_id = request.POST.get('product_id')
+        amount = request.POST.get('amount')
         product = get_object_or_404(Product, id=product_id)
-        cart.add(product=product)
+        cart.add(product=product, amount=amount)
 
-        response = JsonResponse({'Product name': product.name})
+        response = JsonResponse({'Product name': product.name, 'product_price': product.price})
+
         return response
 
 
 def cart_del(request):
-    return render(request, 'cart.html')
+    cart = Cart(request)
+
+    pass
 
 
 def cart_up(request):

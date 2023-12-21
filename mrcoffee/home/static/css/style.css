@@ -191,7 +191,7 @@ h2{
     }
 }
 #btn{
-    width: 350px;
+    width: 340px;
     height: 100px;
     font-family: font1;
     font-size: 20pt;
@@ -232,7 +232,7 @@ img {
     height: 420px;
     border-radius: 10px;
     box-shadow: 0 15px 25px rgba(0, 0, 0, .2);
-	background-color: rgba(65, 33, 33, 0.7);
+    background-color: rgba(65, 33, 33, 0.7);
     margin: 20px;
     overflow: hidden;
     transition: .5s;

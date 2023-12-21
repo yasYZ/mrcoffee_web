@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products | محصولات</title>
+    <title>Products | سبد خرید</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
@@ -45,58 +45,52 @@
     <aside class="side">
         <h2>محصولات:</h2>
         <div class="products">
-            <a href="#">x1 قهوه: 100.000T</a>
+            {% for product_id, product_info in products.items %}
+                {% if product_info.sale %}
+                    {% if product_info.sale_price == '0' %}
+                        <a href="#">x{% if not product_info.amount == '' or 0 %}{{ product_info.amount }} {% else %} 1 {% endif %} {{ product_info.name }}: رایگان </a>
+                            {% else %}
+                                <a href="#">x{% if not product_info.amount == '' or 0 %}{{ product_info.amount }} {% else %} 1 {% endif %} {{ product_info.name }}: {{ product_info.sale_price }}T</a>
+                    {% endif %}
+                {% else %}
+                {% if product_info.price == '0' %}
+                    <a href="#">x{% if not product_info.amount == '' or 0 %}{{ product_info.amount }} {% else %} 1 {% endif %} {{ product_info.name }}: رایگان </a>
+                    {% else %}
+                        <a href="#">x{% if not product_info.amount == '' or 0 %}{{ product_info.amount }} {% else %} 1 {% endif %} {{ product_info.name }}: {{ product_info.price }}T</a>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
         </div>
         <div class="line"></div>
-        <a class="btn" href="/cart/confirm"><button>پرداخت</button></a>
+        <div class="center">
+            <a class="btn" href="/cart/confirm"><button>پرداخت</button></a>
+        </div>
     </aside>
     <h2 class="hidden-text">خریدات شما</h2>
     <section class="row">
+        {% for product_id, product_info in products.items %}
         <article class="col">
             <figure>
-                <img class="img" src="../static/image/SPRK_default_preset_name_custom_.png">
-                <figcaption class="item-name">item name</figcaption>
-                <del class="price">100,000T</del>
-                <p class="price-sale">80,000T</p>
-                <a class="input">تعداد:0</a>
+                <img class="img" src="../../{{ product_info.picture }}">
+                <figcaption class="item-name">{{ product_info.name }}</figcaption>
+                {% if product_info.sale %}
+                    <p class="price">{{ product_info.sale_price }}</p>
+                {% elif product_info.price > 0 %}
+                    <p class="price-sale">{{ product_info.price }}</p>
+                {% else %}
+                    <p class="price">رایگان</p>
+                {% endif %}
+                {% if product_info.amount == '' or product_info.amount >= 1 %}
+                    <p class="input"> تعداد: 1{{ product_info.category }}</p>
+                {% else %}
+                    <p class="input">تعداد: {{ product_info.amount }}{{ product_info.category }}</p>
+                {% endif %}
+            <div class="center">
+                <a class="del-btn" href="/cart/delete"><button>حذف محصول</button></a>
+            </div>
             </figure>
         </article>
-        <article class="col">
-            <figure>
-                <img class="img" src="../static/image/SPRK_default_preset_name_custom_.png">
-                <figcaption class="item-name">item name</figcaption>
-                <del class="price">100,000T</del>
-                <p class="price-sale">80,000T</p>
-                <a class="input">تعداد:0</a>
-            </figure>
-        </article>
-        <article class="col">
-            <figure>
-                <img class="img" src="../static/image/SPRK_default_preset_name_custom_.png">
-                <figcaption class="item-name">item name</figcaption>
-                <del class="price">100,000T</del>
-                <p class="price-sale">80,000T</p>
-                <a class="input">تعداد:0</a>
-            </figure>
-        </article>
-        <article class="col">
-            <figure>
-                <img class="img" src="../static/image/SPRK_default_preset_name_custom_.png">
-                <figcaption class="item-name">item name</figcaption>
-                <del class="price">100,000T</del>
-                <p class="price-sale">80,000T</p>
-                <a class="input">تعداد:0</a>
-            </figure>
-        </article>
-        <article class="col">
-            <figure>
-                <img class="img" src="../static/image/SPRK_default_preset_name_custom_.png">
-                <figcaption class="item-name">item name</figcaption>
-                <del class="price">100,000T</del>
-                <p class="price-sale">80,000T</p>
-                <a class="input">تعداد:0</a>
-            </figure>
-        </article>
+        {% endfor %}
     </section>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
