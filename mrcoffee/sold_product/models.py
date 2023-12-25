@@ -22,12 +22,12 @@ class Customer(models.Model):
 class Product(models.Model):
     name = models.CharField(max_length=50)
     discription = models.TextField(max_length=200)
-    price = models.DecimalField(default=0, max_digits=100, decimal_places=0)
+    price = models.DecimalField(default=0, max_digits=50, decimal_places=0)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, default=1)
     is_sale = models.BooleanField(default=False)
     is_special = models.BooleanField(default=False)
     is_exists = models.BooleanField(default=True)
-    sale_price = models.DecimalField(default=0, max_digits=100, decimal_places=0)
+    sale_price = models.DecimalField(default=0, max_digits=50, decimal_places=0)
     picture = models.ImageField(upload_to='static/image/')
 
     def __str__(self):
@@ -35,7 +35,7 @@ class Product(models.Model):
 
 
 class Order(models.Model):
-    product = models.CharField(max_length=300)
+    product = models.CharField(max_length=200)
     customer = models.CharField(max_length=20)
     mail = models.CharField(max_length=100)
     phone_number = models.CharField(max_length=13)
