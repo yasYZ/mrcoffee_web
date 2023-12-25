@@ -1,11 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>پرداخت | مستر کافی</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../static/css/sold.css">
+    <title>Animated Login & Registration Form HTML CSS | Codehal</title>
+    <link rel="stylesheet" href="../static/css/loginreg.css">
 </head>
 <body>
     {% if messages %}
@@ -46,91 +47,23 @@
             </li>
         </ul>
     </nav>
-    <section class="row">
-        <article class="col">
-            <figure>
-                <figcaption class="item-area">
-                    <p>لورم</p>
-                    <p>لورم</p>
-                    <p>لورم</p>
-                    <p>لورم</p>
-                    <p>لورم</p>
-                    <p>لورم</p>
-                    <div class="w-line"></div>
-                </figcaption>
-                <p>مجموع :</p>
-                <div class="line"></div>
-                <div class="tab">
-                    <button class="tablinks" onclick="openCity(event, 'present')">پرداخت درب منزل</button>
-                    <button class="tablinks" onclick="openCity(event, 'online')">پرداخت آنلاین</button>
+    <div class="wrapper">
+        <div class="form-wrapper login">
+            <form method="POST" action="#">
+                {% csrf_token %}
+                {{ form.errors }}
+                <h2>ایمیل خود را تایید کنید</h2>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="mail"></ion-icon>
+                    </span>
+                    <input type="email" placeholder="ایمیل" name="forgot-mail" required>
                 </div>
-                <div id="present" class="tabcontent">
-                    <h3>پرداخت درب منزل</h3>
-                    <form action="#" method="POST">
-                        <input type="text" class="address" name="address" placeholder="آدرس محل تحویل : تهران-ستارخان-..." required>
-                        <input type="email" class="address" name="address" placeholder="ایمیل : youremail@example.com" required>
-                        <input type="number" class="address" name="address" placeholder="شماره تلفن : 91212345678" required>
-
-                        <p><button type="submit" class="btn">سفارش</button></p>
-                    </form>
-                </div>
-                <div id="online" class="tabcontent">
-                    <h3>پرداخت آنلاین</h3>
-                    <div>
-                        <p><button class="btn" id="myBtn">پرداخت</button></p>
-                    </div>
-                    <div id="myModal" class="modal">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <span class="close">&times;</span>
-                                <h2>پیغام!</h2>
-                            </div>
-                            <div class="modal-body">
-                                <p>متاسفانه برای پرداخت آنلاین مشکل فنی بوجود آمده</p>
-                                <p>منتظر باشید!</p>
-                        </div>
-                            <div class="modal-footer">
-                                <h3>ساخته شده با ❤️ توسط TopUp</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </figure>
-        </article>
-    </section>
-    <script>
-        function openCity(evt, cityName) {
-            var i, tabcontent, tablinks;
-
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-
-            document.getElementById(cityName).style.display = "block";
-            evt.currentTarget.className += " active";
-            }
-    </script>
-    <script>
-        var modal = document.getElementById("myModal");
-        var btn = document.getElementById("myBtn");
-        var span = document.getElementsByClassName("close")[0];
-        btn.onclick = function() {
-            modal.style.display = "block";
-        }
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
+                <button type="submit">تایید</button>
+            </form>
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

@@ -50,15 +50,12 @@
         <article class="col">
             <figure>
                 <figcaption class="item-area">
-                    <p>لورم</p>
-                    <p>لورم</p>
-                    <p>لورم</p>
-                    <p>لورم</p>
-                    <p>لورم</p>
-                    <p>لورم</p>
+                    {% for product_id, product_info in products.items %}
+                    <p>{% if not product_info.amount == '' or 0 %}تعداد: x{{ product_info.amount }}|  {% else %}تعداد: x1 | {% endif %} نام محصول: {{ product_info.name }} | مبلغ قابل پرداخت: {{ product_info.price }}T</p>
+                    {% endfor %}
                     <div class="w-line"></div>
                 </figcaption>
-                <p class="sum">مجموع :</p>
+                <p class="sum">مجموع :  | {{ sum_total_price }} تومان</p>
                 <div class="line"></div>
                 <div class="tab">
                     <button class="tablinks" onclick="openCity(event, 'present')">پرداخت درب منزل</button>
@@ -67,9 +64,10 @@
                 <div id="present" class="tabcontent">
                     <h3>پرداخت درب منزل</h3>
                     <form action="#" method="POST">
+                        {% csrf_token %}
                         <input type="text" class="address" name="address" placeholder="آدرس محل تحویل : تهران-ستارخان-..." required>
-                        <input type="email" class="address" name="address" placeholder="ایمیل : youremail@example.com" required>
-                        <input type="number" class="address" name="address" placeholder="شماره تلفن : 91212345678" required>
+                        <input type="email" class="address" name="mail" placeholder="ایمیل : youremail@example.com" required>
+                        <input type="number" class="address" name="ph_number" placeholder="شماره تلفن : 91212345678" required>
                         <p><button type="submit" class="btn">سفارش</button></p>
                     </form>
                 </div>

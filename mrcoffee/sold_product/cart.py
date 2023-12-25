@@ -17,10 +17,9 @@ class Cart:
             self.cart[product_id] = {'price': str(product.price), 'name': str(product.name), 'picture':  str(product.picture), 'sale_price': str(product.sale_price), 'category': str(product.category), 'sale': product.is_sale, 'amount': str(amount)}
         self.session.modified = True
 
-    def delete(self, product, amount):
-        product_id = str(product.id)
+    def delete(self, product):
+            product_id_str = str(product)
 
-        if product_id in self.cart:
-            self.cart.pop({'price': str(product.price), 'name': str(product.name), 'picture': str(product.picture),
-                           'sale_price': str(product.sale_price), 'category': str(product.category),
-                           'sale': product.is_sale, 'amount': str(amount)})
+            if product_id_str in self.cart:
+                del self.cart[product_id_str]
+                self.session.modified = True

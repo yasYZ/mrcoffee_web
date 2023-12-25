@@ -10,6 +10,7 @@
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <link rel="stylesheet" href="../static/css/Cart.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav class="nav">
@@ -83,15 +84,34 @@
                 {% if product_info.amount == '' or product_info.amount >= 1 %}
                     <p class="input"> تعداد: 1{{ product_info.category }}</p>
                 {% else %}
-                    <p class="input">تعداد: {{ product_info.amount }}{{ product_info.category }}</p>
+                    <p class="input" id="del-input">تعداد: {{ product_info.amount }}{{ product_info.category }}</p>
                 {% endif %}
             <div class="center">
-                <a class="del-btn" href="/cart/delete"><button>حذف محصول</button></a>
+                <a class="del-btn"><button value="{{ product_id }}" id="del-cart">حذف محصول</button></a>
             </div>
             </figure>
         </article>
         {% endfor %}
     </section>
+    <script>
+        $(document).on('click', '#del-cart', function (e){
+            e.preventDefault();
+            $.ajax({
+                type : 'POST',
+                url :'{% url 'cart_del' %}',
+                data: {
+                    product_id : $('#del-cart').val(),
+                    csrfmiddlewaretoken: '{{ csrf_token }}',
+                    action : 'post'},
+                success: function (json){
+                    console.log(json)
+                    
+                },
+                error: function(xhr, errmsg, err){
+                }
+            })
+        })
+    </script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

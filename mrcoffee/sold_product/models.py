@@ -35,17 +35,13 @@ class Product(models.Model):
 
 
 class Order(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
-    number = models.IntegerField(default=1)
+    product = models.CharField(max_length=300)
+    customer = models.CharField(max_length=20)
+    mail = models.CharField(max_length=100)
     phone_number = models.CharField(max_length=13)
+    address = models.TextField(max_length=500)
     date = models.DateField(default=datetime.datetime.today())
     status = models.BooleanField(default=False)
 
     def __str__(self):
         return self.product
-
-
-class CartProduct(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    number = models.IntegerField(default=1)

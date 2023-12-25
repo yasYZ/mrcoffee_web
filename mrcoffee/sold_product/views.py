@@ -1,6 +1,8 @@
+from django.contrib.auth.models import User
 from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse
 from .cart import Cart
-from .models import Product, Order
+from .models import Product, Order, Category
 from django.http import JsonResponse
 from .context_processors import cart
 
@@ -45,20 +47,30 @@ def cart_add(request):
 def cart_del(request):
     cart = Cart(request)
 
-    pass
+    if request.POST.get('action') == 'post':
+        product_id = int(request.POST.get('product_id'))
+        product = get_object_or_404(Product, id=product_id)
+        response = JsonResponse({'Product name': product.name, 'product_price': product.price})
+        cart.delete(product=product_id)
 
-
-def cart_up(request):
-    return render(request, 'cart.html')
+        return response
 
 
 def cart_conf(request):
-    form = Order
+    cart = Cart(request).cart
+    id_keys = cart.keys()
+    total_price = 0
+
+    for item in id_keys:
+        item = cart[item]
+        price_str = item.get('price', '0')
+        price_int = int(price_str)
+
+        total_price += price_int
 
     if request.method == 'POST':
-        form = Order(request.POST)
-        if form.is_valid():
-            form.save()
-            redirect('home')
-    context = {'form': form}
-    return render(request, 'urlProduct/intPI/productSoldConfirm.html')
+        phone_number = request.POST.get('ph_number')
+        mail = request.POST.get('mail')
+        address = request.POST.get('address')
+        Order.objects.create(phone_number=phone_number, product=cart, customer=request.user, mail=mail, address=address)
+    return render(request, 'urlProduct/intPI/productSoldConfirm.html', {'products': cart, 'sum_total_price': str(total_price)})
