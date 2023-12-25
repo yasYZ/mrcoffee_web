@@ -27,11 +27,11 @@ def login_register(request):
 
 
 def forgot_password_done(request):
-    render(request, 'ForgetPassDone.html')
+    return HttpResponse('<h1>فراموشی رمز موفق!</h1>''<h3>برای ایمیل شما پیامی ارسال شده</h2>')
 
 
 def reset_password_done(request):
-    render(request, 'ResetPassDone.html')
+    return HttpResponse('<h1>فراموشی رمز موفق!</h1>''<h3>رمز شما با موفقیت تغییر پیدا کرد</h2>')
 
 
 def reset_password(request, uidb64, token):

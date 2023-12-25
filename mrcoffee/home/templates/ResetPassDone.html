@@ -1,54 +1,76 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animated Login & Registration Form HTML CSS | Codehal</title>
-    <link rel="stylesheet" href="../static/css/loginreg.css">
-    <!-- Latest compiled and minified CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Signup/Login</title>
+    <link rel="stylesheet" href="../../static/css/styles.css">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->
 </head>
-<body>
-    <nav class="nav">
-            <div class="menu">
-            <label for="chk1">
-                <ion-icon class="menu-btn" name="grid"></ion-icon>
-            </label>
-        </div>
-        <div class="logo"><h1>Mr.Coffee</h1></div>
-        <div class="search-box">
-            <form>
-                <label>
-                    <input type ="text" name ="search" id ="srch" placeholder="جست و جو">
-                </label>
-                <button type ="submit"><i class="fa fa-search"></i></button>
-            </form>
-        </div>
-        <ul>
-            <li><a href="/Home">خانه</a></li>
-            <li><a href="/Products">محصولات</a></li>
-            <li><a href="/AboutUs">درباره ما</a></li>
+<style>
+    .esend {
+        background: white;
+        height: 400px;
+        width: 600px;
+        border-radius: 30px;
+    }
+    .esend h1 {
+        font-family: sans-serif, Montserrat;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+        transform: translateY(20px);
+    }
+    .esend ion-icon {
+        font-size: 200px;
+        color: #e91e63;
+        transform: translateX(200px) translateY(60px);
+    }
+</style>
+<body class="Bgimg">
+<!-- Navbar -->
+    <header>
+        <input type ="checkbox" name ="" id ="chk1">
+        <div class="logo"><h1>Vigiato</h1></div>
+            <div class="search-box">
+                <form>
+                    <label>
+                    <input type ="text" name ="search" id ="srch" placeholder="Search">
+                    </label>
+                    <button type ="submit"><ion-icon name="search"></ion-icon></button>
+                </form>
+            </div>
+            <ul>
+            <li><a href="/Home">Home</a></li>
+            <li><a href="/News">News</a></li>
+            <li><a href="/Shop">Codes</a></li>
+            <li><a href="/ContactUs">Contact</a></li>
             <li>
                 {% if user.is_authenticated %}
-                <a href="/Logout"><ion-icon name="log-out"></ion-icon></a>
+                    <a href="/Logout"><ion-icon name="log-out"></ion-icon></a>
                 {% else %}
-                <a href="/LoginSignup"><ion-icon name="log-in"></ion-icon></a>
+                    <a href="/LoginSignup"><ion-icon name="log-in"></ion-icon></a>
                 {% endif %}
                 <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
-                <a href="/Cart"><ion-icon name="cart"></ion-icon></a>
+                <a href="/Product"><ion-icon name="cart"></ion-icon></a>
             </li>
         </ul>
-    </nav>
-    <div class="container">
-        <section class="row">
-            <div class="col col-12">
-                <h2>رمز شما با موفقیت تغییر کرد</h2>
-                <ion-icon name="checkmark-done-circle"></ion-icon>
+            <div class="menu">
+                <label for="chk1">
+                    <i class="fa fa-bars"></i>
+                </label>
             </div>
-        </section>
-    </div>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </header>
+
+        <div class="esend">
+            <h1>Password changed <br> successfully</h1>
+            <ion-icon name="checkmark-circle"></ion-icon>
+        </div>
+
+    <script src="../../static/js/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 from .cart import Cart
 from .models import Product, Order, Category
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from .context_processors import cart
 
 # Create your views here.
@@ -73,4 +73,5 @@ def cart_conf(request):
         mail = request.POST.get('mail')
         address = request.POST.get('address')
         Order.objects.create(phone_number=phone_number, product=cart, customer=request.user, mail=mail, address=address)
+        return HttpResponse('<h1>پرداخت موفق</h1>''<h2>کاربران ما تا 24 ساعت آینده به شما ایمیل یا پیامک ارسال میکنند</h2>')
     return render(request, 'urlProduct/intPI/productSoldConfirm.html', {'products': cart, 'sum_total_price': str(total_price)})
