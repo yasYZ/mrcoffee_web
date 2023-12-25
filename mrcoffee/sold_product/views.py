@@ -69,9 +69,12 @@ def cart_conf(request):
         total_price += price_int
 
     if request.method == 'POST':
-        phone_number = request.POST.get('ph_number')
-        mail = request.POST.get('mail')
-        address = request.POST.get('address')
-        Order.objects.create(phone_number=phone_number, product=cart, customer=request.user, mail=mail, address=address)
-        return HttpResponse('<h1>پرداخت موفق</h1>''<h2>کاربران ما تا 24 ساعت آینده به شما ایمیل یا پیامک ارسال میکنند</h2>')
+        if User.is_authenticated:
+            phone_number = request.POST.get('ph_number')
+            mail = request.POST.get('mail')
+            address = request.POST.get('address')
+            Order.objects.create(phone_number=phone_number, product=cart, customer=request.user, mail=mail, address=address)
+            return HttpResponse('<h1>پرداخت موفق</h1>''<h2>کاربران ما تا 24 ساعت آینده به شما ایمیل یا پیامک ارسال میکنند</h2>')
+        else:
+            redirect('/login-signup')
     return render(request, 'urlProduct/intPI/productSoldConfirm.html', {'products': cart, 'sum_total_price': str(total_price)})
