@@ -136,32 +136,52 @@ ion-icon:hover {
 .menu ion-icon:hover{
     transform: rotate(45deg);
 }
-@media(max-width:1000px){
-    .logo h1 {
-        font-size: 40px;
-    }
-    .search-box button{
-        position: absolute;
-    }
-    .nav ul{
+@media screen and (max-width: 1000px) {
+    .nav ul {
+        display: none;
         position: fixed;
-        top:100px;
-        right: -100%;
-        background: rgba(0,0,0,0.5);
+        top: 100px;
+        right: 0;
+        background: rgba(0, 0, 0, 0.5);
         height: calc(100vh - 100px);
-        width:50%;
+        width: 100%;
         flex-direction: column;
         align-items: center;
         transition: right 0.5s linear;
     }
-    .nav .menu{
+    .nav ul.show {
+        display: flex;
+    }
+    .nav ul li {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+    .nav .menu {
         display: block;
-        width:100px;
+        width: 50px;
         text-align: center;
     }
-    #chk1:checked ~ ul{
+    #chk1:checked ~ ul {
         right: 0;
-
+    }
+    .nav ul li a {
+        font-size: 20pt;
+    }
+    .nav .logo {
+        display: none;
+    }
+    .search-box {
+        flex: 2;
+        margin-right: auto;
+    }
+    .search-box input {
+        width: 80%;
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+    .search-box button {
+        width: 20%;
     }
 }
 /* products css */

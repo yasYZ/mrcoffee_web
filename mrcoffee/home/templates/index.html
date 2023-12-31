@@ -17,7 +17,7 @@
         {% endfor %}
     {% endif %}
     <nav class="nav">
-            <div class="menu">
+        <div class="menu">
             <label for="chk1">
                 <ion-icon class="menu-btn" name="grid"></ion-icon>
             </label>
@@ -97,6 +97,24 @@
         </p>
         </div>
     </footer>
+    <script>
+        function toggleMenu() {
+            var menuUl = document.querySelector(".nav ul");
+            menuUl.classList.toggle("show");
+        }
+
+        document.querySelector(".menu-btn").addEventListener("click", function () {
+            // Toggle the mobile menu
+            toggleMenu();
+        });
+
+        document.querySelectorAll(".nav ul li a").forEach(function (menuItem) {
+            menuItem.addEventListener("click", function () {
+            // Hide the mobile menu
+            toggleMenu();
+            });
+        });
+    </script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
