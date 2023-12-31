@@ -37,7 +37,6 @@ def cart_add(request):
         cart.add(product=product, amount=amount)
 
         response = JsonResponse({'Product name': product.name, 'product_price': product.price})
-
         return response
 
 
