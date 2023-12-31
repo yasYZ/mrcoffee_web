@@ -24,7 +24,6 @@ def product_detail(request, pi):
 
 def __cart__(request):
     cart = Cart(request).cart
-    print({'products': cart})
     return render(request, 'cart.html', {'products': cart})
 
 
